@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
 
 //components
 import { AppComponent } from './app.component';
@@ -17,6 +17,7 @@ import { DisplayplayersComponent } from './components/pages/displayplayers/displ
 import { DisplayMyTeamComponent } from './components/pages/display-my-team/display-my-team.component';
 import { SignInComponent } from './components/pages/sign-in/sign-in.component';
 import { LandingComponent } from './components/pages/landing/landing.component';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { LandingComponent } from './components/pages/landing/landing.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
