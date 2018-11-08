@@ -1,16 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { TeamService } from '../../../services/team.service';
+import { Team } from '../../../models/team';
 
 @Component({
   selector: 'app-addteam',
   templateUrl: './addteam.component.html',
-  styleUrls: ['./addteam.component.css']
+  styleUrls: ['./addteam.component.css'],
 })
-export class AddteamComponent implements OnInit  {
 
-log(x) {console.log(x)}
 
-ngOnInit(){};
+
+export class AddteamComponent {
+
+  teamCaptain: string;
+  model = new Team("", "", "");
+
+
+  constructor(private teamService: TeamService) {
+
+  }
+
+  // ngOnInit(){
+  //   this.create("");
+  // }
+
+  create() {
+    this.teamService.create(this.model).subscribe(result => {
+      console.log(result);
+    })
+  };
 
 };

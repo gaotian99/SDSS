@@ -1,17 +1,24 @@
-<h2>Add team</h2>
+<div class="container">
+    <h1>Add team</h1>
+    <form (ngSubmit)="create()" #teamForm="ngForm">
+        <div class="form-group">
+            <label for="name">Team Name</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="model.team_name" name="name" #name="ngModel">
+            <!-- <div [hidden]="team_name.valid || team_name.pristine" class="alert alert-danger">
+          Team Name is required
+        </div> -->
+        </div>
 
-<form #addTeamForm="ngForm" (submit)="submit()">
-  <div class="form-group">
-    <label for="teamCaptain">Team Captain</label>
-    <input required maxlength="11" pattern="banana" ngModel name="teamCaptain" #teamCaptain="ngModel" (change)="log(teamCaptain)">
-    <div class="alert alert-danger" *ngIf="!teamCaptain.valid">Team Captain is required</div>
-      <div *ngIf="teamCaptain.errors.required">Team Captain required</div>
+        <div class="form-group">
+            <label for="teamCaptain">Team Captain</label>
+            <input type="text" class="form-control" id="teamCaptain" [(ngModel)]="model.team_captain" name="teamCaptain">
+        </div>
 
-  </div>
-  <div class="form-group">
-      <label for="teamName">Team Name</label>
-      <input ngModel name="teamName" #teamCaptain="ngModel">
-  </div>
-  
-  <button class="btn btn-primary">Submit</button>
-</form>
+        <div class="form-group">
+            <label for="teamSport">Team Sport</label>
+            <input type="text" class="form-control" id="teamSport" [(ngModel)]="model.team_sport" name="teamSport">
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="!teamForm.form.valid">Submit</button>
+    </form>
+</div>

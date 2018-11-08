@@ -16,7 +16,7 @@ export class DisplayteamsComponent implements OnInit
 
   ngOnInit() 
   {
-    this.http.get("http://localhost:3000/displayteams").subscribe(data => {
+    this.http.get("http://localhost:3000/teams").subscribe(data => {
       console.log(data);
       this.registeredTeam=data;
     });

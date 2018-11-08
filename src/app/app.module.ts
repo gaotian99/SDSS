@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { TeamService } from './services/team.service';
 
 //components
 import { AppComponent } from './app.component';
@@ -41,7 +42,7 @@ import { LandingComponent } from './components/pages/landing/landing.component';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [TeamService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
