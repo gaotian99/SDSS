@@ -16,9 +16,12 @@
 
         <div class="form-group">
             <label for="teamSport">Team Sport</label>
-            <input type="text" class="form-control" id="teamSport" [(ngModel)]="model.team_sport" name="teamSport">
+            <select class="form-control" id="teamSport" required [(ngModel)]="model.team_sport" name="teamSport">
+                <option *ngFor="let sport of sports" [value]="sport">{{sport}}</option>
+            </select>
+            <!-- <input type="text" class="form-control" id="teamSport" [(ngModel)]="model.team_sport" name="teamSport"> -->
         </div>
 
-        <button type="submit" class="btn btn-success" [disabled]="!teamForm.form.valid">Submit</button>
+        <a href ="http://localhost:4200/displayteams"><button type="submit" class="btn btn-success" [disabled]="!teamForm.form.valid">Submit</button></a>
     </form>
 </div>

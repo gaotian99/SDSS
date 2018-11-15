@@ -14,8 +14,9 @@ import { Team } from '../../../models/team';
 
 export class AddteamComponent {
 
-  teamCaptain: string;
+ 
   model = new Team("", "", "");
+  sports = ['Basketball', 'Volleyball', 'Soccer', 'Softball', 'Hockey', 'Flag Football']
 
 
   constructor(private teamService: TeamService) {

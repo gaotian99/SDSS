@@ -1,11 +1,22 @@
-<h2>Add Player</h2>
+<div class="container">
+  <h1>Add Player</h1>
+  <form (ngSubmit)="create()" #playerForm="ngForm">
+      <div class="form-group">
+          <label for="name">Player Name</label>
+          <input type="text" class="form-control" id="name" required [(ngModel)]="model.player_name" name="name" #name="ngModel">
+          <!-- <div [hidden]="team_name.valid || team_name.pristine" class="alert alert-danger">
+        Team Name is required
+      </div> -->
+      </div>
 
-<form>
-  First name:<br>
-  <input type="text" name="firstname">
-  <br>
-  Last name:<br>
-  <input type="text" name="lastname">
-  <br>
-  <input type="submit" value="Submit">
-</form>
+      <div class="form-group">
+          <label for="playerTeam">Which team is this player on?</label>
+          <select class="form-control" id="playerTeam" required [(ngModel)]="model.player_team" name="playerTeam">
+              <option *ngFor="let team of teams" [value]="team">{{team}}</option>
+          </select>
+          <!-- <input type="text" class="form-control" id="teamSport" [(ngModel)]="model.team_sport" name="teamSport"> -->
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!playerForm.form.valid">Submit</button>
+  </form>
+</div>

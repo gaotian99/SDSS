@@ -5,5 +5,7 @@ export class Team {
         public team_captain: string,
         public team_sport: string,
     ){ }
+
+    
     
 }

@@ -7,6 +7,7 @@ import { AddplayerComponent } from './components/pages/addplayer/addplayer.compo
 import { AddteamComponent } from './components/pages/addteam/addteam.component';
 import { DisplayteamsComponent } from './components/pages/displayteams/displayteams.component';
 import { DisplayplayersComponent } from './components/pages/displayplayers/displayplayers.component';
+import { DisplayMyTeamComponent } from './components/pages/display-my-team/display-my-team.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'addteam', component: AddteamComponent},
   { path: 'displayteams', component: DisplayteamsComponent},
   { path: 'displayplayers', component: DisplayplayersComponent},
+  { path: 'displayteam/:id', component: DisplayMyTeamComponent}
 ];
 
 

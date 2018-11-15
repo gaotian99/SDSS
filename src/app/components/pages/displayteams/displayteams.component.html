@@ -1,5 +1,19 @@
-<ol>
-  <div *ngFor="let team of registeredTeam">
-    <li>{{team.team_name}}</li>
-  </div>
-</ol>
+<table class="table table-bordered">
+  <tr>
+    <th>Team Name</th>
+    <th>Team Captain</th>
+    <th>Sport</th>
+  </tr>
+  <tr *ngFor="let team of registeredTeam">
+    <td><a href="http://localhost:4200/addplayer">{{team.team_name}}</a></td>
+    <td>{{team.team_captain}}</td>
+    <td>{{team.team_sport}}</td>
+  </tr>
+</table>
+
+
+
+
+<!-- <a href="http://localhost:4200/displayteams">
+  <button class="btn btn-primary">Modify Team</button>
+</a> -->

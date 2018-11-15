@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { TeamService } from './services/team.service';
+import { PlayerService } from './services/player.service';
 
 //components
 import { AppComponent } from './app.component';
@@ -42,7 +43,7 @@ import { LandingComponent } from './components/pages/landing/landing.component';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [TeamService],
+  providers: [TeamService, PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

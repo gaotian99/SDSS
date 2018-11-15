@@ -1,37 +1,14 @@
 
-
-<p>
-  Please select a sport!
-</p>
-
-
-<div>
-  <ul>
-    <li>
-      <a href="/complevelpage">Basketball</a>
-    </li>
-    <li>
-      <a href="/complevelpage">Volleyball</a>
-    </li>
-    <li>
-      <a href="/complevelpage">Soccer</a>
-    </li>
-    <li>
-      <a href="/complevelpage">Hockey</a>
-    </li>
-    <li>
-      <a href="/complevelpage">Flag Football</a>
-    </li>
-    <li>
-      <a href="/complevelpage">Softball</a>
-    </li>
-  </ul>
-
-  <div *ngFor="let user of users">
-    {{user.name}}
-  </div>
+<div class="buttons">
+ 
+    <a href="http://localhost:4200/addteam">
+      <button class="btn btn-primary">Create Team</button>
+    </a>
+  
+  
+    <a href="http://localhost:4200/displayteams">
+      <button class="btn btn-primary">Modify Team</button>
+    </a>
+  
 
 </div>
-
-
-	

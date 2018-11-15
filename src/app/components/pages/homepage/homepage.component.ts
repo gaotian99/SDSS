@@ -18,10 +18,10 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() 
   {
-    this.http.get("http://localhost:3000/users").subscribe(data => {
-      console.log(data);
-      this.users=data;
-    });
+    // this.http.get("http://localhost:3000/users").subscribe(data => {
+    //   console.log(data);
+    //   this.users=data;
+    // });
   }
 
 }

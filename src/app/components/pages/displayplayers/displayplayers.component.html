@@ -1,0 +1,15 @@
+<div>
+  <table class ="table table-bordered">
+    <tr>
+      <th>Player Name</th>
+      <th>Team Name</th>
+      <th>Sport</th>
+    </tr>
+    <tr  *ngFor="let player of Players">
+      <td>{{player.player_name}}</td>
+      <td>Kings</td>
+      <td>{{player.player_sport}}</td>
+
+    </tr>
+  </table>
+</div>

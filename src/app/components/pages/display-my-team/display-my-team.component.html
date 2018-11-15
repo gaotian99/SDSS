@@ -1,3 +1,15 @@
-<p>
-  display-my-team works!
-</p>
+<h1 *ngFor="let team of registeredTeam">{{team.team_name}} {{team._id}}</h1>
+
+<table class="table table-bordered">
+  <div>
+    <tr>
+      <th>Select</th>
+      <th>Player name</th>
+    </tr>
+  </div>
+  <div>
+    <tr>
+      <!-- <td><input type="checkbox">{{player.player_name}}</td> -->
+    </tr>
+  </div>
+</table>
