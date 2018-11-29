@@ -27,4 +27,5 @@ export class TeamService {
   {
     return this.auth.request('post', "/teams", team)           
   }
+  public 
 }
