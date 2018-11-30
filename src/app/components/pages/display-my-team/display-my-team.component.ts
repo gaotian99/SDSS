@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { TeamService } from 'src/app/services/team.service';
+import { Team } from '../../../models/team';
+
 
 
 
@@ -11,24 +14,27 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DisplayMyTeamComponent implements OnInit {
 
-  public registeredTeam: any=[];
-  teamID:String;
-  
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) { }
+  public registeredTeam: any;
+  teamID: string;
 
-  ngOnInit() 
-  {
-    this.activatedRoute.params.subscribe(params=>
-      {
+  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private teamService: TeamService) { }
 
-      if(params && params.id)
-      {
+
+  ngOnInit() {
+
+    
+
+    this.activatedRoute.params.subscribe(params => {
+
+      if (params && params.id) {
         this.teamID = params.id;
-        console.log("hello");
-        this.http.get("http://localhost:3000/teams/" + this.teamID).subscribe(data => 
-        {
-          console.log(data);
-          this.registeredTeam=data;
-        })
-      }})
-  }}
+ 
+        this.teamService.getTeam(this.teamID).subscribe(result=>
+          {
+            this.registeredTeam = result.team;
+            console.log(result);
+          })
+      }
+    })
+  }
+}

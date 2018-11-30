@@ -5,7 +5,7 @@
     <th>Sport</th>
   </tr>
   <tr *ngFor="let team of registeredTeam">
-    <td><a href="http://localhost:4200/addplayer">{{team.team_name}}</a></td>
+    <td><a href="http://localhost:4200/displayteam/{{team._id}}">{{team.team_name}}</a></td>
     <td>{{team.team_captain}}</td>
     <td>{{team.team_sport}}</td>
   </tr>
