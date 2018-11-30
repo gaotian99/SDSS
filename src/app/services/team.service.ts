@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json',
+    'Content-Type': 'application/json',
     'Authorization': 'my-auth-token'
   })
 };
@@ -20,27 +20,35 @@ const httpOptions = {
 @Injectable()
 export class TeamService {
 
-    teamID: String;
-    public registeredTeam: any;
-  
-  
-  
+  teamID: String;
+  public registeredTeam: any;
+
+
+
   constructor(private auth: AuthService, private activatedRoute: ActivatedRoute, private http: HttpClient) { }
 
-  
-  public create(team: Team): Observable<any>
-  {
-    return this.auth.request('post', "/teams", team)           
+//Creates one team
+  public create(team: Team): Observable<any> {
+    return this.auth.request('post', "/teams", team)
   }
 
 
+//Gets one team
+  public getTeam(teamID: string): Observable<any> {
 
-  public getTeam(teamID: string): Observable<any>
-  {
-    
-        return this.auth.request('get', "/teams/" + teamID)
+    return this.auth.request('get', "/teams/" + teamID)
+
+  }
+//Gets all teams
+  public getTeams(): Observable<any>{
+
+    return this.auth.request('get', "/teams");
+
+  }
+//Deletes a team
+  public deleteTeam(){
     
   }
 
-  
+
 }

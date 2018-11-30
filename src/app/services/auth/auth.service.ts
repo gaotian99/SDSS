@@ -10,7 +10,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  public request(method: 'post' | 'get', url, params?: any): Observable<any> {
+  public request(method: 'post' | 'get' , url, params?: any): Observable<any> {
     let base;
     if (method === 'post') {
 
@@ -22,5 +22,7 @@ export class AuthService {
 
     return base;
   }
+
+  
 
 }
