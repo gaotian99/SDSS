@@ -46,8 +46,9 @@ export class TeamService {
 
   }
 //Deletes a team
-  public deleteTeam(){
-    
+  public deleteTeam(teamID: string){
+    return this.auth.request('delete', "/teams/" + teamID)
+
   }
 
 

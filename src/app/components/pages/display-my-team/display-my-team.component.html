@@ -1,9 +1,12 @@
 <div class="buttons">
   <a href="http://localhost:4200/addplayer">
     <button class="btn btn-primary">Add Player</button></a>
-    <button class="btn btn-primary">Delete Team</button>
+    <button class="btn btn-primary delete">Delete Team</button>
 
 </div>
+
+<button class="delete" title="delete hero"
+  (click)="deleteTeam(_id)">Delete by ID</button>
 
 
 <h3>Team Name: {{registeredTeam?.team_name}}</h3>
@@ -34,10 +37,10 @@
       <th>PPG</th>
     </tr>
   </div>
-  <div>
+  <!-- <div>
     <tr>
       <td><input type="checkbox">{{player.player_name}}</td>
     </tr>
     <tr *ngFor="let player of players">{{player.player_name}}</tr>
-  </div>
+  </div> -->
 </table>

@@ -20,20 +20,21 @@ export class DisplayMyTeamComponent implements OnInit {
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private teamService: TeamService) { }
 
 
+
+  deleteTeam() {
+    this.teamService.deleteTeam(this.teamID).subscribe(result => {
+      console.log(result);
+    })
+  }
+
   ngOnInit() {
-
-    
-
     this.activatedRoute.params.subscribe(params => {
-
       if (params && params.id) {
         this.teamID = params.id;
- 
-        this.teamService.getTeam(this.teamID).subscribe(result=>
-          {
-            this.registeredTeam = result.team;
-            console.log(result);
-          })
+        this.teamService.getTeam(this.teamID).subscribe(result => {
+          this.registeredTeam = result.team;
+          console.log(result);
+        })
       }
     })
   }
