@@ -27,28 +27,27 @@ export class TeamService {
 
   constructor(private auth: AuthService, private activatedRoute: ActivatedRoute, private http: HttpClient) { }
 
-//Creates one team
+  //Creates one team
   public create(team: Team): Observable<any> {
     return this.auth.request('post', "/teams", team)
   }
 
 
-//Gets one team
+  //Gets one team
   public getTeam(teamID: string): Observable<any> {
-
     return this.auth.request('get', "/teams/" + teamID)
-
   }
-//Gets all teams
+    //Gets all teams
   public getTeams(): Observable<any>{
-
     return this.auth.request('get', "/teams");
-
   }
-//Deletes a team
+  //Deletes a team
   public deleteTeam(teamID: string){
     return this.auth.request('delete', "/teams/" + teamID)
-
+  }
+  //modify a team
+  public modifyTeam(teamID: string){
+    return this.auth.request('put', "/teams/" + teamID)
   }
 
 

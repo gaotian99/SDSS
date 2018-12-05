@@ -10,7 +10,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  public request(method: 'post' | 'get' | 'delete', url, params?: any): Observable<any> {
+  public request(method: 'post' | 'get' | 'delete' | 'put', url, params?: any): Observable<any> {
     let base;
     if (method === 'post') {
 
@@ -21,6 +21,9 @@ export class AuthService {
     }
     else if (method === 'delete') {
       base = this.http.delete(environment.apiUrl + url);
+    }
+    else{
+      base = this.http.put(environment.apiUrl + url, params);
     }
 
     return base;

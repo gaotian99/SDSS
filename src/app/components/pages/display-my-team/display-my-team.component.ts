@@ -26,7 +26,12 @@ export class DisplayMyTeamComponent implements OnInit {
       console.log(result);
     })
   }
-
+  modifyTeam(){
+    this.teamService.modifyTeam(this.teamID).subscribe(result=> {
+      console.log(result);
+    })
+  }
+  //loads unique team information when the page loads
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       if (params && params.id) {

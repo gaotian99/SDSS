@@ -1,12 +1,11 @@
 <div class="buttons">
   <a href="http://localhost:4200/addplayer">
     <button class="btn btn-primary">Add Player</button></a>
-    <button class="btn btn-primary delete">Delete Team</button>
-
+  <a href="http://localhost:4200/displayteams"><button class="btn btn-primary delete" title="delete hero" (click)="deleteTeam(_id)">Delete
+      Team</button></a>
+  <a href=""><button class="btn btn-primary" title="modify team" (click)="updateTeam(_id)">Modify Team</button></a>
 </div>
 
-<button class="delete" title="delete hero"
-  (click)="deleteTeam(_id)">Delete by ID</button>
 
 
 <h3>Team Name: {{registeredTeam?.team_name}}</h3>
