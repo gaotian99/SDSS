@@ -4,6 +4,8 @@
       <div class="form-group">
           <label for="name">Player Name</label>
           <input type="text" class="form-control" id="name" required [(ngModel)]="model.player_name" name="name" #name="ngModel">
+          <label for="id">Team ID</label>
+          <input type="text" class="form-control" id="id" required [(ngModel)]="model.teamID" name="id" #name="ngModel">
           <!-- <div [hidden]="team_name.valid || team_name.pristine" class="alert alert-danger">
         Team Name is required
       </div> -->
@@ -11,9 +13,12 @@
 
       <div class="form-group">
           <label for="playerTeam">Which team is this player on?</label>
-          <select class="form-control" id="playerTeam" required [(ngModel)]="model.player_team" name="playerTeam">
-              <option *ngFor="let team of registeredTeam" [value]="team">{{team.team_name}} {{team._id}}</option>
-          </select>
+
+
+         <!-- this is the drop down menu but its not sending the value to the api-->
+           <!-- <select class="form-control" id="playerTeam" required [(ngModel)]="model.teamID" name="playerTeam" #name="ngModel">
+              <option *ngFor="let team of registeredTeam" [value]="team">{{team._id}}</option>
+          </select> -->
           <!-- <input type="text" class="form-control" id="teamSport" [(ngModel)]="model.team_sport" name="teamSport"> -->
       </div>
 

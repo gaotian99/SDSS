@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { PlayerService } from '../../../services/player.service';
 import { Player } from '../../../models/player';
 import { TeamService } from 'src/app/services/team.service';
+import { Team } from 'src/app/models/team';
 
 @Component({
   selector: 'app-addplayer',
@@ -14,6 +15,10 @@ export class AddplayerComponent {
 
 
   model = new Player("", "");
+
+
+  public teamID: string;
+
   public registeredTeam: any = [];
 
   constructor(private playerService: PlayerService, private teamService: TeamService) { }
@@ -26,15 +31,9 @@ export class AddplayerComponent {
     })
   }
 
-
-
   create() {
-    this.playerService.create(this.model).subscribe(result => {
+    this.playerService.create(this.model, this.teamID).subscribe(result => {
       console.log(result);
     })
   };
-
-
-
-
 }
