@@ -16,9 +16,6 @@ export class AddplayerComponent {
 
   model = new Player("", "");
 
-
-  public teamID: string;
-
   public registeredTeam: any = [];
 
   constructor(private playerService: PlayerService, private teamService: TeamService) { }
@@ -32,7 +29,7 @@ export class AddplayerComponent {
   }
 
   create() {
-    this.playerService.create(this.model, this.teamID).subscribe(result => {
+    this.playerService.create(this.model).subscribe(result => {
       console.log(result);
     })
   };
