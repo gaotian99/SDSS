@@ -8,24 +8,17 @@ import { Team } from 'src/app/models/team';
 
 
 
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
-  })
-};
-
-
 @Injectable()
 export class PlayerService {
   
-  public teamID: string;
   constructor(private auth: AuthService) { }
 
 
-  public create(player: Player): Observable<any>
+  public create(player: Player, teamID: string): Observable<any>
   {
-    return this.auth.request('post', "/players", player)           
+    return this.auth.request('post', "/players", {
+      player_name: player.player_name,
+      teamID: teamID, 
+    })           
   }
 }

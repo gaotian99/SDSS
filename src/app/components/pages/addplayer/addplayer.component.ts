@@ -14,7 +14,8 @@ import { Team } from 'src/app/models/team';
 export class AddplayerComponent {
 
 
-  model = new Player("", "");
+  model = new Player("");
+  public teamID: string;
 
   public registeredTeam: any = [];
 
@@ -29,7 +30,7 @@ export class AddplayerComponent {
   }
 
   create() {
-    this.playerService.create(this.model).subscribe(result => {
+    this.playerService.create(this.model, this.registeredTeam.teamID).subscribe(result => {
       console.log(result);
     })
   };
