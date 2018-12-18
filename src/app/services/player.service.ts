@@ -13,12 +13,28 @@ export class PlayerService {
   
   constructor(private auth: AuthService) { }
 
+  playerID: String;
 
-  public create(player: Player, teamID: string): Observable<any>
+
+  public getPlayers(): Observable<any>{
+    return this.auth.request('get', "/players");
+  }
+  public getPlayer(playerID: string): Observable<any> {
+    return this.auth.request('get', "/players/" + playerID)
+  }
+
+
+  public createPlayer(player: Player, teamID: string): Observable<any>
   {
     return this.auth.request('post', "/players", {
       player_name: player.player_name,
       teamID: teamID, 
     })           
   }
+
+  public deletePlayer(playerID: string): Observable<any>
+  {
+    return this.auth.request('delete', "/players/", + playerID);
+  }
+
 }

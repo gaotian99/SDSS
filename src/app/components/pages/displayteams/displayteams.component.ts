@@ -9,7 +9,7 @@ import { TeamService } from 'src/app/services/team.service';
 })
 export class DisplayteamsComponent implements OnInit {
 
-  public registeredTeam: any = [];
+  public team: any = [];
 
   constructor(
     private http: HttpClient,
@@ -19,15 +19,7 @@ export class DisplayteamsComponent implements OnInit {
 
     this.teamService.getTeams().subscribe(result => {
       console.log(result);
-      this.registeredTeam=result;
+      this.team = result;
     })
-
-
-
-    // this.http.get("http://localhost:3000/teams").subscribe(data => {
-    //   console.log(data);
-    //   this.registeredTeam=data;
-    // });
-
-}
+  }
 }

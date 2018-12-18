@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { TeamService } from 'src/app/services/team.service';
 import { Team } from '../../../models/team';
+import { PlayerService } from 'src/app/services/player.service';
+import { Player } from '../../../models/player';
 
 
 
@@ -16,8 +18,9 @@ export class DisplayMyTeamComponent implements OnInit {
 
   public registeredTeam: any;
   teamID: string;
+  playerID: Player;
 
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private teamService: TeamService) { }
+  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private teamService: TeamService, private playerService: PlayerService) { }
 
 
 
@@ -31,6 +34,9 @@ export class DisplayMyTeamComponent implements OnInit {
       console.log(result);
     })
   }
+
+
+
   //loads unique team information when the page loads
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {

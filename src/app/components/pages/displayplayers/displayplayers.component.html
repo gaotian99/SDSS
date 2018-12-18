@@ -5,8 +5,8 @@
       <th>Team Name</th>
       <th>ID</th>
     </tr>
-    <tr  *ngFor="let player of Players">
-      <td>{{player.player_name}}</td>
+    <tr *ngFor="let player of Players">
+      <td><a href="http://localhost:4200/displayplayer/{{player._id}}">{{player.player_name}}</a></td>
       <td>Kings</td>
       <td>{{player._id}}</td>
 

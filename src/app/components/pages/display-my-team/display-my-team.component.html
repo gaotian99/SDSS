@@ -1,7 +1,7 @@
 <div class="buttons">
   <a href="http://localhost:4200/addplayer">
     <button class="btn btn-primary">Add Player</button></a>
-  <a href="http://localhost:4200/displayteams"><button class="btn btn-primary delete" title="delete hero" (click)="deleteTeam(_id)">Delete
+  <a href="http://localhost:4200/displayteams"><button class="btn btn-primary delete" title="delete team" (click)="deleteTeam(_id)">Delete
       Team</button></a>
   <a href=""><button class="btn btn-primary" title="modify team" (click)="updateTeam(_id)">Modify Team</button></a>
 </div>
@@ -11,9 +11,6 @@
 <h3>Team Name: {{registeredTeam?.team_name}}</h3>
 <h5>Team Captain: {{registeredTeam?.team_captain}}</h5>
 <h6>Sport: {{registeredTeam?.team_sport}}</h6>
-
-<h1 *ngFor="let player of registeredTeam?.players">Players: {{player.player_name}}</h1>
-
 
 <table class="table table-bordered">
   <div>
@@ -37,11 +34,27 @@
       <th>PTS</th>
       <th>PPG</th>
     </tr>
-  </div>
-  <!-- <div>
-    <tr>
-      <td><input type="checkbox">{{player.player_name}}</td>
+    <tr *ngFor="let player of registeredTeam?.players">
+        <td><input type="checkbox" name="name1" /></td>
+        <td>{{player.player_name}}</td>
+        <td>{{player.player_fg}}</td>
+        <td>{{player.player_fga}}</td>
+        <td>{{player.player_fgp}}</td>
+        <td>{{player.player_3pm}}</td>
+        <td>{{player.player_3pp}}</td>
+        <td>{{player.player_ft}}</td>
+        <td>{{player.player_ftp}}</td>
+        <td>{{player.player_reb}}</td>
+        <td>{{player.player_ast}}</td>
+        <td>{{player.player_stl}}</td>
+        <td>{{player.player_blk}}</td>
+        <td>{{player.player_pts}}</td>
+        <td>{{player.player_ppg}}</td>
     </tr>
-    <tr *ngFor="let player of players">{{player.player_name}}</tr>
-  </div> -->
+
+
+
+
+  </div>
+
 </table>

@@ -21,7 +21,7 @@ const httpOptions = {
 export class TeamService {
 
   teamID: String;
-  public registeredTeam: any;
+  public team: any;
 
 
 
@@ -29,25 +29,25 @@ export class TeamService {
 
   //Creates one team
   public create(team: Team): Observable<any> {
-    return this.auth.request('post', "/teams", team)
+    return this.auth.request('post', "/team", team)
   }
 
 
   //Gets one team
   public getTeam(teamID: string): Observable<any> {
-    return this.auth.request('get', "/teams/" + teamID)
+    return this.auth.request('get', "/team/" + teamID)
   }
     //Gets all teams
   public getTeams(): Observable<any>{
-    return this.auth.request('get', "/teams");
+    return this.auth.request('get', "/team");
   }
   //Deletes a team
   public deleteTeam(teamID: string){
-    return this.auth.request('delete', "/teams/" + teamID)
+    return this.auth.request('delete', "/team/" + teamID)
   }
   //modify a team
   public modifyTeam(teamID: string){
-    return this.auth.request('put', "/teams/" + teamID)
+    return this.auth.request('put', "/team/" + teamID)
   }
 
 

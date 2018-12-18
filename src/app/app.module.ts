@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { TeamService } from './services/team.service';
 import { PlayerService } from './services/player.service';
+import { LeagueService } from './services/league.service';
 
 //components
 import { AppComponent } from './app.component';
@@ -19,6 +20,10 @@ import { DisplayplayersComponent } from './components/pages/displayplayers/displ
 import { DisplayMyTeamComponent } from './components/pages/display-my-team/display-my-team.component';
 import { SignInComponent } from './components/pages/sign-in/sign-in.component';
 import { LandingComponent } from './components/pages/landing/landing.component';
+import { DisplayMyPlayerComponent } from './components/pages/display-my-player/display-my-player.component';
+import { StandingsComponent } from './components/pages/standings/standings.component';
+import { DisplayLeaguesComponent } from './components/pages/display-leagues/display-leagues.component';
+
 
 
 @NgModule({
@@ -35,6 +40,9 @@ import { LandingComponent } from './components/pages/landing/landing.component';
     DisplayMyTeamComponent,
     SignInComponent,
     LandingComponent,
+    DisplayMyPlayerComponent,
+    StandingsComponent,
+    DisplayLeaguesComponent,
 
   ],
   imports: [
@@ -43,7 +51,7 @@ import { LandingComponent } from './components/pages/landing/landing.component';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [TeamService, PlayerService],
+  providers: [TeamService, PlayerService, LeagueService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

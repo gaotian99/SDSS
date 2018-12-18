@@ -30,7 +30,7 @@ export class AddplayerComponent {
   }
 
   create() {
-    this.playerService.create(this.model, this.registeredTeam.teamID).subscribe(result => {
+    this.playerService.createPlayer(this.model, this.registeredTeam.teamID).subscribe(result => {
       console.log(result);
     })
   };

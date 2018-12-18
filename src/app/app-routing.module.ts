@@ -8,6 +8,10 @@ import { AddteamComponent } from './components/pages/addteam/addteam.component';
 import { DisplayteamsComponent } from './components/pages/displayteams/displayteams.component';
 import { DisplayplayersComponent } from './components/pages/displayplayers/displayplayers.component';
 import { DisplayMyTeamComponent } from './components/pages/display-my-team/display-my-team.component';
+import { DisplayMyPlayerComponent } from './components/pages/display-my-player/display-my-player.component';
+import { StandingsComponent } from './components/pages/standings/standings.component';
+import { LandingComponent } from './components/pages/landing/landing.component';
+import { DisplayLeaguesComponent } from './components/pages/display-leagues/display-leagues.component';
 
 
 const routes: Routes = [
@@ -17,9 +21,13 @@ const routes: Routes = [
   { path: 'complevelpage', component: ComplevelComponent},
   { path: 'addplayer', component: AddplayerComponent},
   { path: 'addteam', component: AddteamComponent},
-  { path: 'displayteams', component: DisplayteamsComponent},
-  { path: 'displayplayers', component: DisplayplayersComponent},
-  { path: 'displayteam/:id', component: DisplayMyTeamComponent}
+  { path: 'team', component: DisplayteamsComponent},
+  { path: 'player', component: DisplayplayersComponent},  
+  { path: 'team/:id', component: DisplayMyTeamComponent},
+  { path: 'displayplayer/:id', component: DisplayMyPlayerComponent},
+  { path: 'standings', component: StandingsComponent},
+  { path: 'landing', component: LandingComponent},
+  { path: 'league', component: DisplayLeaguesComponent},
 ];
 
 

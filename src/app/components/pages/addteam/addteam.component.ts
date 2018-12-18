@@ -15,7 +15,7 @@ import { Team } from '../../../models/team';
 export class AddteamComponent {
 
  
-  model = new Team("", "", "");
+  model = new Team("", "");
   sports = ['Basketball', 'Volleyball', 'Soccer', 'Softball', 'Hockey', 'Flag Football']
 
 
