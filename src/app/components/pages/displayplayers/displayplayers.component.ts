@@ -9,16 +9,16 @@ import { HttpClient } from '@angular/common/http';
 export class DisplayplayersComponent implements OnInit 
 {
 
-  public Players: any=[];
+  public users: any=[];
 
   constructor(
     private http: HttpClient) { }
 
   ngOnInit() 
   {
-    this.http.get("http://localhost:3000/players").subscribe(data => {
+    this.http.get("http://localhost:3000/user").subscribe(data => {
       console.log(data);
-      this.Players=data;
+      this.users=data;
     });
 
 }}

@@ -4,14 +4,13 @@ import { ActivatedRoute } from '@angular/router';
 import { SportService } from 'src/app/services/sport.service';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-sport',
+  templateUrl: './sport.component.html',
+  styleUrls: ['./sport.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class SportComponent implements OnInit {
 
   sport: string;
-  league: any;
 
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private sportService: SportService) { }
 

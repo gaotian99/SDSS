@@ -16,9 +16,10 @@ import { Player } from '../../../models/player';
 })
 export class DisplayMyTeamComponent implements OnInit {
 
-  public registeredTeam: any;
+  public team: any;
   teamID: string;
   playerID: Player;
+  users: any;
 
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private teamService: TeamService, private playerService: PlayerService) { }
 
@@ -43,7 +44,7 @@ export class DisplayMyTeamComponent implements OnInit {
       if (params && params.id) {
         this.teamID = params.id;
         this.teamService.getTeam(this.teamID).subscribe(result => {
-          this.registeredTeam = result.team;
+          this.team = result.team;
           console.log(result);
         })
       }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { LeagueService } from 'src/app/services/league.service';
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  public league: any = [];
+
+  constructor(private leagueService: LeagueService) { }
 
   ngOnInit() {
+    
+    this.leagueService.getLeagues().subscribe(result => {
+      console.log(result);
+      this.league=result;
+    })
   }
 
 }

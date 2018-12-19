@@ -10,7 +10,6 @@ import { LeagueService } from './services/league.service';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomepageComponent } from './components/pages/homepage/homepage.component';
-import { SportspageComponent } from './components/pages/sportspage/sportspage.component';
 import { ComplevelComponent } from './components/pages/complevel/complevel.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AddteamComponent } from './components/pages/addteam/addteam.component';
@@ -23,6 +22,7 @@ import { LandingComponent } from './components/pages/landing/landing.component';
 import { DisplayMyPlayerComponent } from './components/pages/display-my-player/display-my-player.component';
 import { StandingsComponent } from './components/pages/standings/standings.component';
 import { DisplayLeaguesComponent } from './components/pages/display-leagues/display-leagues.component';
+import { SportComponent } from './components/pages/sport/sport.component';
 
 
 
@@ -31,7 +31,6 @@ import { DisplayLeaguesComponent } from './components/pages/display-leagues/disp
     AppComponent,
     NavbarComponent,
     HomepageComponent,
-    SportspageComponent,
     ComplevelComponent,
     AddteamComponent,
     AddplayerComponent,
@@ -43,6 +42,7 @@ import { DisplayLeaguesComponent } from './components/pages/display-leagues/disp
     DisplayMyPlayerComponent,
     StandingsComponent,
     DisplayLeaguesComponent,
+    SportComponent,
 
   ],
   imports: [
