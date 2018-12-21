@@ -38,7 +38,7 @@ export class LeagueService {
 
   //Gets one league
   public getLeague(leagueID: string): Observable<any> {
-    return this.auth.request('get', "/league/" + leagueID)
+    return this.auth.request('get', "/league/league/" + leagueID)
   }
     //Gets all leagues
   public getLeagues(): Observable<any>{

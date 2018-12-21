@@ -30,3 +30,7 @@ a{
 p{
     font-size: large;
 }
+.navbar{
+    display: none;
+}
+    

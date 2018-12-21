@@ -1,3 +1,4 @@
-<p>
-  sport works!
-</p>
+<div *ngFor="let league of league">
+  <a routerLink="/league/{{league._id}}">{{league?.description}}</a>
+  <p>For women with some high school experience. League starts on {{league?.startDate}}</p>
+</div>

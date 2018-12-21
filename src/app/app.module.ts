@@ -9,20 +9,19 @@ import { LeagueService } from './services/league.service';
 //components
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HomepageComponent } from './components/pages/homepage/homepage.component';
 import { ComplevelComponent } from './components/pages/complevel/complevel.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AddteamComponent } from './components/pages/addteam/addteam.component';
 import { AddplayerComponent } from './components/pages/addplayer/addplayer.component';
-import { DisplayteamsComponent } from './components/pages/displayteams/displayteams.component';
+import { TeamComponent } from './components/pages/team/team.component';
 import { DisplayplayersComponent } from './components/pages/displayplayers/displayplayers.component';
 import { DisplayMyTeamComponent } from './components/pages/display-my-team/display-my-team.component';
 import { SignInComponent } from './components/pages/sign-in/sign-in.component';
 import { LandingComponent } from './components/pages/landing/landing.component';
 import { DisplayMyPlayerComponent } from './components/pages/display-my-player/display-my-player.component';
 import { StandingsComponent } from './components/pages/standings/standings.component';
-import { DisplayLeaguesComponent } from './components/pages/display-leagues/display-leagues.component';
 import { SportComponent } from './components/pages/sport/sport.component';
+import { LeagueComponent } from './components/pages/league/league.component';
 
 
 
@@ -30,19 +29,19 @@ import { SportComponent } from './components/pages/sport/sport.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomepageComponent,
     ComplevelComponent,
     AddteamComponent,
     AddplayerComponent,
-    DisplayteamsComponent,
+    TeamComponent,
     DisplayplayersComponent,
     DisplayMyTeamComponent,
     SignInComponent,
     LandingComponent,
     DisplayMyPlayerComponent,
     StandingsComponent,
-    DisplayLeaguesComponent,
     SportComponent,
+    LeagueComponent,
+    TeamComponent,
 
   ],
   imports: [

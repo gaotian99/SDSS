@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SportService } from './sport.service';
+import { NavbarService } from './navbar.service';
 
-describe('SportService', () => {
+describe('NavbarService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: SportService = TestBed.get(SportService);
+    const service: NavbarService = TestBed.get(NavbarService);
     expect(service).toBeTruthy();
   });
 });
