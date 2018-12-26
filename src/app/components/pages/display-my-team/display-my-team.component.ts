@@ -3,8 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { TeamService } from 'src/app/services/entities/team.service';
 import { Team } from '../../../models/team';
-import { PlayerService } from 'src/app/services/entities/player.service';
-import { Player } from '../../../models/player';
+import { User } from '../../../models/user';
 
 
 
@@ -18,10 +17,10 @@ export class DisplayMyTeamComponent implements OnInit {
 
   public team: any;
   teamID: string;
-  playerID: Player;
+  //playerID: User;
   users: any;
 
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private teamService: TeamService, private playerService: PlayerService) { }
+  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private teamService: TeamService) { }
 
 
 

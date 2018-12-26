@@ -2,9 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
+//services
 import { TeamService } from './services/entities/team.service';
-import { PlayerService } from './services/entities/player.service';
+import { UserService } from './services/entities/user.service';
 import { LeagueService } from './services/entities/league.service';
+import { MatchService } from './services/match/match.service';
+import { MatchResultService } from './services/match/match-result.service';
+
 
 //components
 import { AppComponent } from './app.component';
@@ -18,10 +23,10 @@ import { DisplayplayersComponent } from './components/pages/displayplayers/displ
 import { DisplayMyTeamComponent } from './components/pages/display-my-team/display-my-team.component';
 import { SignInComponent } from './components/pages/sign-in/sign-in.component';
 import { LandingComponent } from './components/pages/landing/landing.component';
-import { DisplayMyPlayerComponent } from './components/pages/display-my-player/display-my-player.component';
 import { StandingsComponent } from './components/pages/standings/standings.component';
 import { SportComponent } from './components/pages/sport/sport.component';
 import { LeagueComponent } from './components/pages/league/league.component';
+import { PlayerComponent } from './components/pages/player/player.component';
 
 
 
@@ -37,11 +42,11 @@ import { LeagueComponent } from './components/pages/league/league.component';
     DisplayMyTeamComponent,
     SignInComponent,
     LandingComponent,
-    DisplayMyPlayerComponent,
     StandingsComponent,
     SportComponent,
     LeagueComponent,
     TeamComponent,
+    PlayerComponent,
 
   ],
   imports: [
@@ -50,7 +55,7 @@ import { LeagueComponent } from './components/pages/league/league.component';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [TeamService, PlayerService, LeagueService],
+  providers: [TeamService, UserService, LeagueService, MatchService, MatchResultService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

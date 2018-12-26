@@ -37,7 +37,7 @@ Team component works
     </tr>
     <tr *ngFor="let user of team.players">
         <td><input type="checkbox" name="name1" /></td>
-        <td>{{user?.name}}</td>
+        <td><a href="/player/{{user?._id}}">{{user?.name}}</a></td>
     </tr>
 
 

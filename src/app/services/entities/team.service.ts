@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment.prod';
 import { AuthService } from '../auth/auth.service';
 import { Team } from '../../models/team';
 import { ActivatedRoute } from '@angular/router';
+import { User } from '../../models/user';
 
 
 
@@ -22,6 +23,7 @@ export class TeamService {
 
   teamID: String;
   public team: any;
+  userID: String;
 
 
 
@@ -30,6 +32,11 @@ export class TeamService {
   //Creates one team
   public create(team: Team): Observable<any> {
     return this.auth.request('post', "/team", team)
+  }
+
+  //Adds a player to a team
+  public addPlayer(userID: string, teamID: string): Observable<any> {
+    return this.auth.request('post', "/player/add", {userID, teamID})
   }
 
 

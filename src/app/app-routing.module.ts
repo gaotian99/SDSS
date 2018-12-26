@@ -7,7 +7,7 @@ import { AddteamComponent } from './components/pages/addteam/addteam.component';
 import { TeamComponent } from './components/pages/team/team.component';
 import { DisplayplayersComponent } from './components/pages/displayplayers/displayplayers.component';
 import { DisplayMyTeamComponent } from './components/pages/display-my-team/display-my-team.component';
-import { DisplayMyPlayerComponent } from './components/pages/display-my-player/display-my-player.component';
+import { PlayerComponent } from './components/pages/player/player.component';
 import { StandingsComponent } from './components/pages/standings/standings.component';
 import { LandingComponent } from './components/pages/landing/landing.component';
 import { LeagueComponent } from './components/pages/league/league.component';
@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'team', component: TeamComponent},
   { path: 'player', component: DisplayplayersComponent},  
   { path: 'team/:id', component: TeamComponent},
-  { path: 'player/:id', component: DisplayMyPlayerComponent},
+  { path: 'player/:id', component: PlayerComponent},
   { path: 'standings', component: StandingsComponent},
   { path: 'landing', component: LandingComponent},
   { path: 'sport/:sport', component: SportComponent},
