@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
-import { AuthService } from './auth/auth.service';
-import { Team } from '../models/team';
+import { AuthService } from '../auth/auth.service';
+import { Team } from '../../models/team';
 import { ActivatedRoute } from '@angular/router';
-import { League } from '../models/league';
+import { League } from '../../models/league';
 
 
 

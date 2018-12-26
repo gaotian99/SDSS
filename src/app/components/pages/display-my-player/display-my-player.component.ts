@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { TeamService } from 'src/app/services/team.service';
+import { TeamService } from 'src/app/services/entities/team.service';
 import { Team } from '../../../models/team';
-import { PlayerService } from 'src/app/services/player.service';
+import { PlayerService } from 'src/app/services/entities/player.service';
 import { Player } from '../../../models/player';
 
 @Component({

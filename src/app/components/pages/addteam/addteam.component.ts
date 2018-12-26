@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { TeamService } from '../../../services/team.service';
+import { TeamService } from '../../../services/entities/team.service';
 import { Team } from '../../../models/team';
 
 @Component({

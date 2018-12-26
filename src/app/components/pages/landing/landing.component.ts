@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LeagueService } from 'src/app/services/league.service';
+import { LeagueService } from 'src/app/services/entities/league.service';
 
 @Component({
   selector: 'app-landing',

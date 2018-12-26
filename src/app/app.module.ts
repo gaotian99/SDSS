@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { TeamService } from './services/team.service';
-import { PlayerService } from './services/player.service';
-import { LeagueService } from './services/league.service';
+import { TeamService } from './services/entities/team.service';
+import { PlayerService } from './services/entities/player.service';
+import { LeagueService } from './services/entities/league.service';
 
 //components
 import { AppComponent } from './app.component';

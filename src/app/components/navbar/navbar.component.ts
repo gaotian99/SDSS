@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { LeagueService } from 'src/app/services/league.service';
+import { LeagueService } from 'src/app/services/entities/league.service';
 
 @Component({
   selector: 'app-navbar',

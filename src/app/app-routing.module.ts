@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'addteam', component: AddteamComponent},
   { path: 'team', component: TeamComponent},
   { path: 'player', component: DisplayplayersComponent},  
-  { path: 'team/:id', component: DisplayMyTeamComponent},
+  { path: 'team/:id', component: TeamComponent},
   { path: 'player/:id', component: DisplayMyPlayerComponent},
   { path: 'standings', component: StandingsComponent},
   { path: 'landing', component: LandingComponent},

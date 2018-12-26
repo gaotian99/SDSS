@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
-import { AuthService } from './auth/auth.service';
-import { Team } from '../models/team';
+import { AuthService } from '../auth/auth.service';
+import { Team } from '../../models/team';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -49,6 +49,11 @@ export class TeamService {
   public modifyTeam(teamID: string){
     return this.auth.request('put', "/team/" + teamID)
   }
+
+      //Gets all for one league
+      public getTeamsByLeagueID(leagueID: string): Observable<any>{
+        return this.auth.request('get', "/league/team/" + leagueID);
+      }
 
 
 }

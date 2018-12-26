@@ -1,3 +1,8 @@
 <div>
-  {{league?.description}}
+  <h1>{{league?.description}}</h1>
 </div>
+<div *ngFor = "let team of team">
+  <a href ="/team/{{team._id}}">{{team.name}}</a>
+</div>
+
+league component works

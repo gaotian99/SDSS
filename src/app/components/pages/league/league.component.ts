@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LeagueService } from 'src/app/services/league.service';
+import { LeagueService } from 'src/app/services/entities/league.service';
 import { ActivatedRoute } from '@angular/router';
+import { TeamService } from 'src/app/services/entities/team.service';
 
 @Component({
   selector: 'app-league',
@@ -12,24 +13,25 @@ export class LeagueComponent implements OnInit {
 
   public league: any = [];
   public leagueID: string;
+  public team: any = [];
 
   constructor(
     private http: HttpClient,
     private leagueService: LeagueService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private teamService: TeamService) { }
 
-  
+
   ngOnInit() {
 
 
-    //loads unique league information when the page loads
+    // //loads unique league information when the page loads
     this.activatedRoute.params.subscribe(params => {
       if (params && params.id) {
         this.leagueID = params.id;
         this.leagueService.getLeague(this.leagueID).subscribe(result => {
           console.log(result);
-          console.log("hello");
-          this.league=result;
+          this.league = result;
         })
       }
     })
@@ -37,20 +39,12 @@ export class LeagueComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       if (params && params.id) {
         this.leagueID = params.id;
-        this.leagueService.getLeague(this.leagueID).subscribe(result => {
+        this.teamService.getTeamsByLeagueID(this.leagueID).subscribe(result => {
           console.log(result);
-          console.log("hello");
-          this.league=result;
+          this.team = result;
         })
       }
     })
-
-
-
-
-
-
-
   }
 
 }
