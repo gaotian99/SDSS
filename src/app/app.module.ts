@@ -27,6 +27,7 @@ import { StandingsComponent } from './components/pages/standings/standings.compo
 import { SportComponent } from './components/pages/sport/sport.component';
 import { LeagueComponent } from './components/pages/league/league.component';
 import { PlayerComponent } from './components/pages/player/player.component';
+import { AdminComponent } from './components/pages/admin/admin.component';
 
 
 
@@ -47,6 +48,7 @@ import { PlayerComponent } from './components/pages/player/player.component';
     LeagueComponent,
     TeamComponent,
     PlayerComponent,
+    AdminComponent,
 
   ],
   imports: [

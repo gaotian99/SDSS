@@ -21,8 +21,14 @@ export class MatchResultService {
     return this.auth.request('post', "/matchresult", matchResult)
   }
 
-    //Gets one matchResult
-    public getMatchResult(matchResultID: string, teamID: string): Observable<any> {
+    // //Gets one matchResult. This needs work.
+    // public getMatchResult(matchResultID: string, teamID: string): Observable<any> {
+    //   return this.auth.request('get', "/matchResult/" + teamID)
+    // }
+
+    //Gets all matchResults per a single team
+
+    public getMatchResults(teamID: string): Observable<any>{
       return this.auth.request('get', "/matchResult/" + teamID)
     }
 

@@ -12,6 +12,7 @@ import { StandingsComponent } from './components/pages/standings/standings.compo
 import { LandingComponent } from './components/pages/landing/landing.component';
 import { LeagueComponent } from './components/pages/league/league.component';
 import { SportComponent } from './components/pages/sport/sport.component';
+import { AdminComponent } from './components/pages/admin/admin.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'landing', component: LandingComponent},
   { path: 'sport/:sport', component: SportComponent},
   { path: 'league/:id', component: LeagueComponent},
+  { path: 'admin', component: AdminComponent},
 
 ];
 

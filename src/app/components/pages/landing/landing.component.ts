@@ -10,14 +10,15 @@ import { LeagueService } from 'src/app/services/entities/league.service';
 export class LandingComponent implements OnInit {
 
   public league: any = [];
+  public sport: any;
 
   constructor(private leagueService: LeagueService) { }
 
   ngOnInit() {
     
-    this.leagueService.getLeagues().subscribe(result => {
+    this.leagueService.getSports().subscribe(result => {
       console.log(result);
-      this.league=result;
+      this.sport=result;
     })
   }
 
