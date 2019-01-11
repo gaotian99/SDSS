@@ -15,11 +15,22 @@ export class UserService {
 
   constructor(private auth: AuthService, private activatedRoute: ActivatedRoute, private http: HttpClient) { }
 
+
+//CREATE
+
   //Creates one user
   public create(user: User): Observable<any> {
     return this.auth.request('post', "/user", user)
   }
 
+
+//GET
+
+  //Gets all league managers
+
+     public getLeagueManagers(): Observable<any>{
+      return this.auth.request('get', "/user/leagueManager")
+    }
 
   //Gets one user
   public getUser(userID: string): Observable<any> {
@@ -29,10 +40,28 @@ export class UserService {
   public getUsers(): Observable<any> {
     return this.auth.request('get', "/user");
   }
+
+
+
+//DELETE
+
+
   //Deletes a user
   public deleteUser(userID: string) {
     return this.auth.request('delete', "/user/" + userID)
   }
+
+
+
+
+
+//MODIFY
+
+
+
+
+
+
   //modify a user
   public modifyUser(userID: string) {
     return this.auth.request('put', "/user/" + userID)

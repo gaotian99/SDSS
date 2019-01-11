@@ -1,3 +1,84 @@
 <p>
   admin works!
 </p>
+
+
+
+<!--Create league-->
+
+<div class="container">
+  <h1>Create league</h1>
+  <form (ngSubmit)="createLeague()" #teamForm="ngForm">
+      <div class="form-group">
+          <label for="name">League Name</label>
+          <input type="text" class="form-control" id="name" required [(ngModel)]="leagueModel.name" name="name">
+      </div>
+
+      <div class="form-group">
+          <label for="">Description</label>
+          <input type="text" class="form-control" id="description" required [(ngModel)]="leagueModel.description" name="description">
+      </div>
+
+      <div class="form-group">
+          <label for="">Sport</label>
+          <input type="text" class="form-control" id="sport" required [(ngModel)]="leagueModel.sport" name="sport">
+          <!-- <input type="text" class="form-control" id="teamSport" [(ngModel)]="model.team_sport" name="teamSport"> -->
+      </div>
+
+      <div class="form-group">
+        <label for="">League Manager</label>
+        <select class="form-control" id="leagueManager" required [(ngModel)]="leagueModel.leagueManager" name="leagueManager">
+          <option *ngFor = "let leagueManager of leagueManager">{{leagueManager.name}}</option>
+
+
+        </select>
+    </div>
+
+    <div class="form-group">
+      <label for="">Start Date</label>
+      <input type="text" class="form-control" id="startDate" required [(ngModel)]="leagueModel.startDate" name="startDate">
+  </div>
+
+  <div class="form-group">
+    <label for="">Gender</label>
+    <input type="text" class="form-control" id="gender" required [(ngModel)]="leagueModel.gender" name="gender">
+</div>
+
+<div class="form-group">
+  <label for="">Competition Level</label>
+  <input type="text" class="form-control" id="competitionLevel" required [(ngModel)]="leagueModel.competitionLevel" name="competitionLevel">
+</div>
+
+<a href ="/admin"><button type="submit" class="btn btn-success" [disabled]="!teamForm.form.valid">Submit</button></a>
+
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--Create team-->
+
+
+
+
+
+<!--Create player-->
+
+
+
+
+
+<!--Create match-->
+
+
+
+
+
+<!--Create matchResult-->

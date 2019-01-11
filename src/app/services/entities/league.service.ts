@@ -32,7 +32,7 @@ export class LeagueService {
 
   //Creates one league
   public create(league: League): Observable<any> {
-    return this.auth.request('post', "/league", league)
+    return this.auth.request('post', "/league/create", league)
   }
 
 
@@ -40,9 +40,9 @@ export class LeagueService {
   public getLeague(leagueID: string): Observable<any> {
     return this.auth.request('get', "/league/league/" + leagueID)
   }
-    //Gets all leagues
+    //Gets all unique sports
   public getSports(): Observable<any>{
-    return this.auth.request('get', "/league");
+    return this.auth.request('get', "/league/sport");
   }
 
     //Gets all leagues by sport
