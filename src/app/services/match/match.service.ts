@@ -26,9 +26,9 @@ export class MatchService {
     return this.auth.request('get', "/match/" + matchID)
   }
     //Gets all matches
-  // public getMatches(): Observable<any>{
-  //   return this.auth.request('get', "/match");
-  // }
+  public getMatches(): Observable<any>{
+    return this.auth.request('get', "/match");
+  }
 
     //Gets all matches by team
   public getMatchesByTeam(teamID: string): Observable<any>{

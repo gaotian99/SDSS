@@ -27,6 +27,9 @@ export class AdminComponent implements OnInit {
   matchResultModel = new MatchResult(true, "", "");
 
   public leagueManager: User;
+  public teamCaptain: User;
+  public leagues: League;
+  public matches: Match;
 
 
 
@@ -73,6 +76,18 @@ export class AdminComponent implements OnInit {
       this.leagueManager = result;
 
     })
+
+    this.leagueService.getLeagues().subscribe(result => {
+      console.log(result);
+      this.leagues= result;
+    })
+
+    this.matchService.getMatches().subscribe(result => {
+      console.log(result);
+      this.matches=result;
+    })
+
+
 
   }
 
