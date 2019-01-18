@@ -10,6 +10,21 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+  private token: string;
+
+
+  private saveToken(token: string): void {
+    localStorage.setItem('mean-token', token);
+    this.token = token;
+  }
+
+  private getToken(): string {
+    if (!this.token) {
+      this.token = localStorage.getItem('mean-token');
+    }
+    return this.token;
+  }
+
   public request(method: 'post' | 'get' | 'delete' | 'put', url, params?: any): Observable<any> {
     let base;
     if (method === 'post') {
