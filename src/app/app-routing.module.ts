@@ -13,6 +13,7 @@ import { LandingComponent } from './components/pages/landing/landing.component';
 import { LeagueComponent } from './components/pages/league/league.component';
 import { SportComponent } from './components/pages/sport/sport.component';
 import { AdminComponent } from './components/pages/admin/admin.component';
+import { SignInComponent } from './components/pages/sign-in/sign-in.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'addplayer', component: AddplayerComponent},
   { path: 'addteam', component: AddteamComponent},
   { path: 'team', component: TeamComponent},
-  { path: 'player', component: DisplayplayersComponent},  
+  { path: 'player', component: DisplayplayersComponent},
   { path: 'team/:id', component: TeamComponent},
   { path: 'player/:id', component: PlayerComponent},
   { path: 'standings', component: StandingsComponent},
@@ -29,13 +30,13 @@ const routes: Routes = [
   { path: 'sport/:sport', component: SportComponent},
   { path: 'league/:id', component: LeagueComponent},
   { path: 'admin', component: AdminComponent},
-
+  { path: 'login', component: SignInComponent}
 ];
 
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ],
-  
+
 })
 export class AppRoutingModule { }
