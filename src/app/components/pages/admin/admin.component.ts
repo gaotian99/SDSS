@@ -21,7 +21,7 @@ export class AdminComponent implements OnInit {
 
 
   leagueModel = new League("", "", new Date, "", "", "");
-  userModel = new User("", "", "", "", "", "", "");
+  userModel = new User("", "", "", "", "", "", "", "");
   teamModel = new Team("", "", "");
   matchModel = new Match("", new Date);
   matchResultModel = new MatchResult(true, "", "");

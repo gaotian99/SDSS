@@ -14,7 +14,7 @@ import { Team } from 'src/app/models/team';
 export class AddplayerComponent {
 
 
-  model = new User("","","","","","","");
+  model = new User("","","","","","","", "");
   public teamID: string;
 
   public registeredTeam: any = [];
