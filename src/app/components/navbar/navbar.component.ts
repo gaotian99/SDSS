@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { LeagueService } from 'src/app/services/entities/league.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +14,14 @@ export class NavbarComponent implements OnInit {
   public sport: string;
   public league: any[];
 
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private leagueService: LeagueService) { }
+  
+
+  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private leagueService: LeagueService, private auth: AuthService) { }
+
+
+
+
+
 
   //loads unique league information when the page loads
   ngOnInit() {

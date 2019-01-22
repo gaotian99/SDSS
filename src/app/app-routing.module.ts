@@ -13,6 +13,8 @@ import { LandingComponent } from './components/pages/landing/landing.component';
 import { LeagueComponent } from './components/pages/league/league.component';
 import { SportComponent } from './components/pages/sport/sport.component';
 import { AdminComponent } from './components/pages/admin/admin.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { RegisterComponent } from './components/pages/register/register.component';
 
 
 const routes: Routes = [
@@ -29,6 +31,8 @@ const routes: Routes = [
   { path: 'sport/:sport', component: SportComponent},
   { path: 'league/:id', component: LeagueComponent},
   { path: 'admin', component: AdminComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent}
 
 ];
 

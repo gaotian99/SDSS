@@ -21,13 +21,14 @@ import { AddplayerComponent } from './components/pages/addplayer/addplayer.compo
 import { TeamComponent } from './components/pages/team/team.component';
 import { DisplayplayersComponent } from './components/pages/displayplayers/displayplayers.component';
 import { DisplayMyTeamComponent } from './components/pages/display-my-team/display-my-team.component';
-import { SignInComponent } from './components/pages/sign-in/sign-in.component';
 import { LandingComponent } from './components/pages/landing/landing.component';
 import { StandingsComponent } from './components/pages/standings/standings.component';
 import { SportComponent } from './components/pages/sport/sport.component';
 import { LeagueComponent } from './components/pages/league/league.component';
 import { PlayerComponent } from './components/pages/player/player.component';
 import { AdminComponent } from './components/pages/admin/admin.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { RegisterComponent } from './components/pages/register/register.component';
 
 
 
@@ -41,7 +42,6 @@ import { AdminComponent } from './components/pages/admin/admin.component';
     TeamComponent,
     DisplayplayersComponent,
     DisplayMyTeamComponent,
-    SignInComponent,
     LandingComponent,
     StandingsComponent,
     SportComponent,
@@ -49,6 +49,8 @@ import { AdminComponent } from './components/pages/admin/admin.component';
     TeamComponent,
     PlayerComponent,
     AdminComponent,
+    LoginComponent,
+    RegisterComponent,
 
   ],
   imports: [

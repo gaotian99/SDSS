@@ -6,14 +6,22 @@
       </div>
       <div class="col-md-4">
         <div class="btn-group float-right mt-2" role="group">
-          <a class="btn btn-md btn-primary" href="#">
+          <a class="btn btn-md btn-primary" *ngIf="!auth.isLoggedIn()" href="/login">
             <i class="fa fa-flag" aria-hidden="true"></i> Login</a>
+            <a class="btn btn-md btn-primary" *ngIf="!auth.isLoggedIn()" href="/register">
+              <i class="fa fa-flag" aria-hidden="true"></i> Register</a>
         </div>
       </div>
     </section>
   </div>
 
 </div>
+
+<ul class="nav navbar-nav navbar-right">
+  <li *ngIf="!auth.isLoggedIn()"><a routerLink="/login">Sign in</a></li>
+  <li *ngIf="auth.isLoggedIn()"><a routerLink="/profile">{{ auth.getUserDetails()?.name }}</a></li>
+  <li *ngIf="auth.isLoggedIn()"><a (click)="auth.logout()">Logout</a></li>
+</ul>
 
 
 

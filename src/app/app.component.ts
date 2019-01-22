@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from './services/auth/auth.service';
+
 
 @Component({
   selector: 'app-root',
@@ -8,5 +10,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'SDSS';
+
+
+  constructor(public auth: AuthService) {};
+
+
 }
 
