@@ -8,8 +8,10 @@
         <div class="btn-group float-right mt-2" role="group">
           <a class="btn btn-md btn-primary" *ngIf="!auth.isLoggedIn()" href="/login">
             <i class="fa fa-flag" aria-hidden="true"></i> Login</a>
-            <a class="btn btn-md btn-primary" *ngIf="!auth.isLoggedIn()" href="/register">
-              <i class="fa fa-flag" aria-hidden="true"></i> Register</a>
+          <a class="btn btn-md btn-primary" *ngIf="!auth.isLoggedIn()" href="/register">
+            <i class="fa fa-flag" aria-hidden="true"></i> Register</a>
+          <a class="btn btn-md btn-primary" *ngIf="auth.isLoggedIn()" (click)="auth.logout()" href="/landing">
+            <i class="fa fa-flag" aria-hidden="true"></i> Logout</a>
         </div>
       </div>
     </section>
@@ -26,19 +28,19 @@
 
 
 
-  <nav class="navbar navbar-expand-sm navbar-light">
+<nav class="navbar navbar-expand-sm navbar-light">
 
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="/landing">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="'/myprofile">My Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/">History</a>
-      </li>
-    </ul>
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/landing">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="'/myprofile">My Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/">History</a>
+    </li>
+  </ul>
 
-  </nav>
+</nav>

@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 
 export interface UserDetails {
@@ -79,24 +80,61 @@ export class AuthService {
     }
   };
 
-  public request(method: 'post' | 'get' | 'delete' | 'put', url, params?: any): Observable<any> {
+  // public request(method: 'post' | 'get' | 'delete' | 'put', url, params?: any): Observable<any> {
+  //   let base;
+  //   if (method === 'post') {
+
+  //     base = this.http.post(environment.apiUrl + url, params);
+
+  //   } else if (method === 'get')  {
+  //     base = this.http.get(environment.apiUrl + url);
+  //   }
+  //   else if (method === 'delete') {
+  //     base = this.http.delete(environment.apiUrl + url);
+  //   }
+  //   else{
+  //     base = this.http.put(environment.apiUrl + url, params);
+  //   }
+
+  //   return base;
+  // }
+
+  public request(method: 'post'|'get' | 'delete' | 'put',url,params?:any): Observable<any>{
     let base;
-    if (method === 'post') {
-
-      base = this.http.post(environment.apiUrl + url, params);
-
-    } else if (method === 'get')  {
-      base = this.http.get(environment.apiUrl + url);
+    if(method === 'post'){
+      if(this.isLoggedIn()){
+        base = this.http.post(environment.apiUrl + url,params,{headers:{Authorization: `Bearer ${this.getToken()}`}});//add token to every post request
+      }
+      else{
+        base = this.http.post(environment.apiUrl + url,params);
+      }
+    }else if (method === 'get'){
+      base = this.http.get(environment.apiUrl + url,{headers:{Authorization: `Bearer ${this.getToken()}`}});
     }
     else if (method === 'delete') {
       base = this.http.delete(environment.apiUrl + url);
     }
-    else{
+    else {
       base = this.http.put(environment.apiUrl + url, params);
     }
 
-    return base;
+    const request = base.pipe(
+      map((data:TokenResponse)=>{
+        if(data.token){
+          this.saveToken(data.token);
+        }
+
+        return data;
+      })
+    )
+
+    return request;
   }
+
+
+
+
+
 
   public login(user: TokenPayload): Observable<any>{
     return this.request('post', '/api/login', user);
