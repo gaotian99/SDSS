@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { LeagueService } from 'src/app/services/entities/league.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import {NavbarService} from '../../services/entities/navbar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -16,14 +17,13 @@ export class NavbarComponent implements OnInit {
 
   
 
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private leagueService: LeagueService, private auth: AuthService) { }
+  constructor(public nav: NavbarService, private http: HttpClient, private activatedRoute: ActivatedRoute, private leagueService: LeagueService, private auth: AuthService) { }
 
 
 
 
 
 
-  //loads unique league information when the page loads
   ngOnInit() {
 
   }

@@ -30,6 +30,7 @@ import { AdminComponent } from './components/pages/admin/admin.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
+import { NavbarService } from './services/entities/navbar.service';
 
 
 
@@ -61,7 +62,7 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [TeamService, UserService, LeagueService, MatchService, MatchResultService],
+  providers: [TeamService, UserService, LeagueService, MatchService, MatchResultService, NavbarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
