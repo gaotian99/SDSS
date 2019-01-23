@@ -15,7 +15,8 @@ import { SportComponent } from './components/pages/sport/sport.component';
 import { AdminComponent } from './components/pages/admin/admin.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { RegisterComponent } from './components/pages/register/register.component';
-
+import { ProfileComponent } from './components/pages/profile/profile.component';
+import { AuthGuardService} from './services/auth/auth-guard.service';
 
 const routes: Routes = [
   { path: '', component: LandingComponent},
@@ -32,7 +33,8 @@ const routes: Routes = [
   { path: 'league/:id', component: LeagueComponent},
   { path: 'admin', component: AdminComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent}
+  { path: 'register', component: RegisterComponent},
+  { path: 'profile/:id', component: ProfileComponent, canActivate:[AuthGuardService]},
 
 ];
 

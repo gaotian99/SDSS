@@ -29,6 +29,7 @@ import { PlayerComponent } from './components/pages/player/player.component';
 import { AdminComponent } from './components/pages/admin/admin.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { RegisterComponent } from './components/pages/register/register.component';
+import { ProfileComponent } from './components/pages/profile/profile.component';
 
 
 
@@ -51,6 +52,7 @@ import { RegisterComponent } from './components/pages/register/register.componen
     AdminComponent,
     LoginComponent,
     RegisterComponent,
+    ProfileComponent,
 
   ],
   imports: [
