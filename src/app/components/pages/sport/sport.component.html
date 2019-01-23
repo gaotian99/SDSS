@@ -1,5 +1,6 @@
 <div *ngFor="let league of league">
-  <a routerLink="/league/{{league._id}}">{{league?.description}}</a>
-  <p>For women with some high school experience. League starts on {{league?.startDate}}</p>
+  <h1><a routerLink="/league/{{league._id}}">{{league?.name}}</a></h1>
+  <p>{{league?.description}} League starts on {{league?.startDate}}</p>
+  <p>Cost to register: {{league?.fee}}</p>
 </div>
 

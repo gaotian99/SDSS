@@ -20,7 +20,7 @@ import { MatchResult } from 'src/app/models/matchResult';
 export class AdminComponent implements OnInit {
 
 
-  leagueModel = new League("", "", new Date, "", "", "");
+  leagueModel = new League("","", "", new Date, "", "", "", "", "", "");
   userModel = new User("", "", "", "", "", "", "","");
   teamModel = new Team("", "", "");
   matchModel = new Match("", new Date);
