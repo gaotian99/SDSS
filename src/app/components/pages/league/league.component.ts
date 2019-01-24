@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { LeagueService } from 'src/app/services/entities/league.service';
 import { ActivatedRoute } from '@angular/router';
 import { TeamService } from 'src/app/services/entities/team.service';
+import { NavbarService } from 'src/app/services/entities/navbar.service';
 
 @Component({
   selector: 'app-league',
@@ -19,11 +20,13 @@ export class LeagueComponent implements OnInit {
     private http: HttpClient,
     private leagueService: LeagueService,
     private activatedRoute: ActivatedRoute,
-    private teamService: TeamService) { }
+    private teamService: TeamService,
+    private navbar: NavbarService) { }
 
 
   ngOnInit() {
 
+    this.navbar.show();
 
     // //loads unique league information when the page loads
     this.activatedRoute.params.subscribe(params => {
