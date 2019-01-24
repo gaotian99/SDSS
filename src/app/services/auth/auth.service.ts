@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { User } from 'src/app/models/user';
 
 
 export interface UserDetails {
@@ -24,11 +25,15 @@ export interface TokenPayload {
   name?: string;
 }
 
-export interface RegisterDetails {
-  email: string;
-  password: string;
-  name: string;
-}
+// export interface RegisterDetails {
+//   email: string;
+//   password: string;
+//   name: string;
+//   age: string;
+//   sex: string;
+//   phoneNumber: string;
+//   role: string;
+// }
 
 @Injectable({
   providedIn: 'root'
@@ -140,8 +145,8 @@ export class AuthService {
     return this.request('post', '/api/login', user);
   }
 
-  public register(registerDetails:RegisterDetails): Observable<any>{
-    return this.request('post', '/api/register',registerDetails);
+  public register(user:User): Observable<any>{
+    return this.request('post', '/api/register',user);
   }
 
 }

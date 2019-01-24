@@ -5,6 +5,7 @@ import { UserService } from '../../../services/entities/user.service';
 import { User } from '../../../models/user';
 import { TeamService } from 'src/app/services/entities/team.service';
 import { Team } from 'src/app/models/team';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-addplayer',
@@ -14,12 +15,12 @@ import { Team } from 'src/app/models/team';
 export class AddplayerComponent {
 
 
-  model = new User("","","","","","","","");
+  model = new User("","","","","","","");
   public teamID: string;
 
   public registeredTeam: any = [];
 
-  constructor(private UserService: UserService, private teamService: TeamService) { }
+  constructor(private auth: AuthService, private userService: UserService, private teamService: TeamService) { }
 
   ngOnInit() {
 
@@ -30,7 +31,7 @@ export class AddplayerComponent {
   }
 
   create() {
-    this.UserService.create(this.model).subscribe(result => {
+    this.auth.register(this.model).subscribe(result => {
       console.log(result);
     })
   };

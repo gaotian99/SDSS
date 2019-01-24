@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService, RegisterDetails } from 'src/app/services/auth/auth.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-register',
@@ -14,14 +15,14 @@ export class RegisterComponent implements OnInit {
 
 
 
-  public registerDetails: RegisterDetails;
+  public user: User = {email:"", password:"", name:"", age:"", sex:"", phoneNumber:"", role:""};
 
 
 
 
 
   register() {
-    this.auth.register(this.registerDetails).subscribe(result=>
+    this.auth.register(this.user).subscribe(result=>
       console.log(result))
   };
 

@@ -18,10 +18,10 @@ export class UserService {
 
 //CREATE
 
-  //Creates one user
-  public create(user: User): Observable<any> {
-    return this.auth.request('post', "/user", user)
-  }
+
+
+
+
 
 
 //GET
@@ -46,7 +46,7 @@ export class UserService {
 //DELETE
 
 
-  //Deletes a user
+  //Deletes a user. Should probably move to authentication
   public deleteUser(userID: string) {
     return this.auth.request('delete', "/user/" + userID)
   }
@@ -62,9 +62,12 @@ export class UserService {
 
 
 
-  //modify a user
-  public modifyUser(userID: string) {
-    return this.auth.request('put', "/user/" + userID)
-  }
+  //modify a user. Should move to authentication
+  // public modifyUser(userID: string) {
+  //   return this.auth.request('put', "/user/" + userID)
+  // }
+
+  public modifyUser(user: User) {4
+  return this.auth.request('put', "/user" + user.email)}
 
 }

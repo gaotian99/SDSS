@@ -83,7 +83,7 @@
         <div class="form-group">
           <label for="">League</label>
           <select class="form-control" id="league" required [(ngModel)]="teamModel.leagueID" name="league">
-            <option *ngFor = "let league of leagues">{{league.description}}</option>
+            <option *ngFor = "let league of leagues">{{league.name}}</option>
           </select>
       </div>
   

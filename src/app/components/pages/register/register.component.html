@@ -7,27 +7,31 @@
       <form (submit)="register()">
         <div class="form-group">
           <label for="name">Full name</label>
-          <input type="text" class="form-control" name="name" placeholder="Enter your name" [(ngModel)]="credentials.name">
+          <input type="text" class="form-control" name="name" placeholder="Enter your name" [(ngModel)]="user.name">
         </div>
         <div class="form-group">
           <label for="email">Email address</label>
-          <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="credentials.email">
+          <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="user.email">
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password">
+          <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="user.password">
         </div>
         <div class="form-group">
           <label for="email">Age</label>
-          <input type="email" class="form-control" name="email" placeholder="Age" [(ngModel)]="credentials.age">
+          <input type="email" class="form-control" name="email" placeholder="Age" [(ngModel)]="user.age">
         </div>
         <div class="form-group">
           <label for="email">Sex</label>
-          <input type="email" class="form-control" name="email" placeholder="Sex" [(ngModel)]="credentials.sex">
+          <input type="email" class="form-control" name="email" placeholder="Sex" [(ngModel)]="user.sex">
         </div>
         <div class="form-group">
           <label for="email">Phone number</label>
-          <input type="email" class="form-control" name="email" placeholder="Phone number" [(ngModel)]="credentials.phoneNumber">
+          <input type="email" class="form-control" name="email" placeholder="Phone number" [(ngModel)]="user.phoneNumber">
+        </div>
+        <div class="form-group">
+          <label for="email">Role</label>
+          <input type="email" class="form-control" name="email" placeholder="Role" [(ngModel)]="user.role">
         </div>
         <button type="submit" class="btn btn-default">Register!</button>
       </form>

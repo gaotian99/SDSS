@@ -9,6 +9,7 @@ import { User } from 'src/app/models/user';
 import { Team } from 'src/app/models/team';
 import { Match } from 'src/app/models/match';
 import { MatchResult } from 'src/app/models/matchResult';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 
 
@@ -21,7 +22,7 @@ export class AdminComponent implements OnInit {
 
 
   leagueModel = new League("","", "", new Date, "", "", "", "", "", "");
-  userModel = new User("", "", "", "", "", "", "","");
+  user = new User("", "", "", "", "", "","");
   teamModel = new Team("", "", "");
   matchModel = new Match("", new Date);
   matchResultModel = new MatchResult(true, "", "");
@@ -40,7 +41,8 @@ export class AdminComponent implements OnInit {
     private matchService: MatchService,
     private matchResultService: MatchResultService,
     private teamService: TeamService,
-    private userService: UserService) { }
+    private userService: UserService,
+    private auth: AuthService) { }
 
 
   createLeague() {
@@ -49,7 +51,7 @@ export class AdminComponent implements OnInit {
     })
   };
   createUser() {
-    this.userService.create(this.userModel).subscribe(result => {
+    this.auth.register(this.user).subscribe(result => {
       console.log(result);
     })
   }
