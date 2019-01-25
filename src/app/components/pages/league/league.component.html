@@ -6,6 +6,7 @@
     <div class="col-lg-4">
       <h1>{{league?.name}}</h1>
       <button class="btn btn-primary">Create Team</button>
+      <button class="btn btn-primary">Join Team</button>
       <!-- <button class = "btn btn-primary">Join Team</button> -->
 
       <br>
@@ -17,14 +18,15 @@
     </div>
 
 
-    <div class="col-lg-4">
+    <div class="col-lg-2">
       <div class="news">
-        <h3>{{league?.headline}}</h3>
+        <h1>League news</h1>
+        <h4>{{league?.headline}}</h4>
         <p>{{league?.news}}</p>
       </div>
     </div>
 
-    <div class="col-lg-4 ">
+    <div class="col-lg-3   ">
         <table class="table table-striped table-hover table-responsive standings">
           <tr>
             <th>Position</th>
@@ -40,6 +42,9 @@
           </tr>
   
         </table>
+      </div>
+      <div class="col-lg-3">
+        <h1>Upcoming Schedule</h1>
       </div>
 
 

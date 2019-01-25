@@ -7,17 +7,17 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-6">
+      <div class="col-lg-6">
         <div *ngFor="let league of league">
           <h1><a routerLink="/league/{{league._id}}">{{league?.name}}</a></h1>
           <p>{{league?.description}} League starts on {{league?.startDate}}</p>
           <p>Cost to register: {{league?.fee}}</p>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-lg-3">
         <h1>Recent highlights</h1>
       </div>
-      <div class = "col-3">
+      <div class = "col-lg-3">
        <h1>Upcoming Schedule</h1>
       </div>
 
