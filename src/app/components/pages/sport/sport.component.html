@@ -4,14 +4,27 @@
 
 
 
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <div *ngFor="let league of league">
+          <h1><a routerLink="/league/{{league._id}}">{{league?.name}}</a></h1>
+          <p>{{league?.description}} League starts on {{league?.startDate}}</p>
+          <p>Cost to register: {{league?.fee}}</p>
+        </div>
+      </div>
+      <div class="col-3">
+        Column 2222222222222222222222222222222222222222222222222
+      </div>
+      <div class = "col-3">
+        Colum 33333333333333333333333333333333333333333333333333
+      </div>
 
+    </div>
+  </div>
 
-<div *ngFor="let league of league">
-  <h1><a routerLink="/league/{{league._id}}">{{league?.name}}</a></h1>
-  <p>{{league?.description}} League starts on {{league?.startDate}}</p>
-  <p>Cost to register: {{league?.fee}}</p>
-</div>
-
+</body>
 
 
 <app-footer></app-footer>>
