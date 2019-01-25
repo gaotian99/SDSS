@@ -4,6 +4,7 @@ import { LeagueService } from 'src/app/services/entities/league.service';
 import { ActivatedRoute } from '@angular/router';
 import { TeamService } from 'src/app/services/entities/team.service';
 import { NavbarService } from 'src/app/services/entities/navbar.service';
+import { FooterService } from 'src/app/services/entities/footer.service';
 
 @Component({
   selector: 'app-league',
@@ -21,12 +22,14 @@ export class LeagueComponent implements OnInit {
     private leagueService: LeagueService,
     private activatedRoute: ActivatedRoute,
     private teamService: TeamService,
-    private navbar: NavbarService) { }
+    private navbar: NavbarService,
+    private footer: FooterService) { }
 
 
   ngOnInit() {
 
     this.navbar.show();
+    
 
     // //loads unique league information when the page loads
     this.activatedRoute.params.subscribe(params => {
@@ -48,6 +51,10 @@ export class LeagueComponent implements OnInit {
         })
       }
     })
+    this.footer.show();
+ 
+
+
   }
 
 }

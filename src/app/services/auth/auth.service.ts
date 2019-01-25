@@ -59,6 +59,7 @@ export class AuthService {
 
   public getUserDetails(): UserDetails {
     const token = this.getToken();
+    console.log(token);
     let payload;
     if (token) {
       payload = token.split('.')[1];

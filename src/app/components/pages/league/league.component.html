@@ -1,41 +1,44 @@
 <app-navbar>
-  
-</app-navbar><div class="container-fluid">
+
+</app-navbar>
+<div class="container-fluid">
   <div class="row">
     <div class="col-lg-5">
       <h1>{{league?.name}}</h1>
-      <button class = "btn btn-primary">Create Team</button>
+      <button class="btn btn-primary">Create Team</button>
       <!-- <button class = "btn btn-primary">Join Team</button> -->
-      
+
       <br>
       <br>
 
 
       <p>{{league?.description}}</p>
 
-      </div>
-
-    <div class = "col-lg-3">
-        <table class="table table-striped table-hover table-responsive" >
-            <tr>
-               <th>Position</th>
-               <th>Team</th>
-               <th>Wins</th>
-               <th>Losses</th>
-            </tr>
-            <tr *ngFor="let team of team">
-              <th>1</th>
-              <th><a href="/team/{{team._id}}">{{team.name}}</a></th>
-              <th>5</th>
-              <th>2</th>
-            </tr>
-            
-         </table>
     </div>
-    <div class = "col-lg-4">Test</div>
-    
-  
-</div>
+
+    <div class="col-lg-3">
+      <table class="table table-striped table-hover table-responsive">
+        <tr>
+          <th>Position</th>
+          <th>Team</th>
+          <th>Wins</th>
+          <th>Losses</th>
+        </tr>
+        <tr *ngFor="let team of team">
+          <th>1</th>
+          <th><a href="/team/{{team._id}}">{{team.name}}</a></th>
+          <th>5</th>
+          <th>2</th>
+        </tr>
+
+      </table>
+    </div>
+    <div class="col-lg-4">Test</div>
+
+
+  </div>
 
 
 </div>
+
+<app-footer></app-footer>

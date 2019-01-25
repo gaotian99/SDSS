@@ -1,8 +1,17 @@
 <app-navbar>
-  
-</app-navbar><div *ngFor="let league of league">
+
+</app-navbar>
+
+
+
+
+
+<div *ngFor="let league of league">
   <h1><a routerLink="/league/{{league._id}}">{{league?.name}}</a></h1>
   <p>{{league?.description}} League starts on {{league?.startDate}}</p>
   <p>Cost to register: {{league?.fee}}</p>
 </div>
 
+
+
+<app-footer></app-footer>>

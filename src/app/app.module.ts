@@ -31,6 +31,8 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { NavbarService } from './services/entities/navbar.service';
+import { FooterComponent } from './components/footer/footer.component';
+import { FooterService } from './services/entities/footer.service';
 
 
 
@@ -54,6 +56,7 @@ import { NavbarService } from './services/entities/navbar.service';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
+    FooterComponent,
 
   ],
   imports: [
@@ -62,7 +65,7 @@ import { NavbarService } from './services/entities/navbar.service';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [TeamService, UserService, LeagueService, MatchService, MatchResultService, NavbarService],
+  providers: [TeamService, UserService, LeagueService, MatchService, MatchResultService, NavbarService, FooterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

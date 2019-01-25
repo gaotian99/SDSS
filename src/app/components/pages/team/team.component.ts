@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { TeamService } from 'src/app/services/entities/team.service';
 import { LeagueService } from 'src/app/services/entities/league.service';
 import { ActivatedRoute } from '@angular/router';
+import { NavbarService } from 'src/app/services/entities/navbar.service';
+import { FooterService } from 'src/app/services/entities/footer.service';
 
 @Component({
   selector: 'app-team',
@@ -18,9 +20,14 @@ export class TeamComponent implements OnInit {
     private http: HttpClient,
     private teamService: TeamService,
     private leagueService: LeagueService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private nav: NavbarService,
+    private footer: FooterService) { }
 
   ngOnInit() {
+
+    this.nav.show();
+    this.footer.show();
 
     this.activatedRoute.params.subscribe(params => {
       if (params && params.id) {
