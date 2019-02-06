@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { LeagueService } from 'src/app/services/entities/league.service';
 import { NavbarService } from '../../../services/entities/navbar.service';
 import { FooterService } from 'src/app/services/entities/footer.service';
+import { ListMatchesComponent } from '../../list-matches/list-matches.component';
+
 
 @Component({
   selector: 'app-sport',
@@ -16,7 +18,11 @@ export class SportComponent implements OnInit {
   public league: any = [];
 
 
-  constructor(public nav: NavbarService, private http: HttpClient, private activatedRoute: ActivatedRoute, private leagueService: LeagueService, private footer: FooterService) { }
+  constructor(public nav: NavbarService,
+    private http: HttpClient,
+    private activatedRoute: ActivatedRoute,
+    private leagueService: LeagueService,
+    private footer: FooterService,) { }
 
 
   //loads all the leagues from a specific sport
@@ -28,7 +34,7 @@ export class SportComponent implements OnInit {
         this.leagueService.getLeaguesBySport(this.sport).subscribe(result => {
           console.log(result);
           console.log("hello");
-          this.league=result;
+          this.league = result;
         })
       }
     })
@@ -39,7 +45,7 @@ export class SportComponent implements OnInit {
 
   }
 
-  
+
 
 
 }

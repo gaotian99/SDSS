@@ -5,6 +5,8 @@ import { LeagueService } from 'src/app/services/entities/league.service';
 import { ActivatedRoute } from '@angular/router';
 import { NavbarService } from 'src/app/services/entities/navbar.service';
 import { FooterService } from 'src/app/services/entities/footer.service';
+import { ListMatchesComponent } from '../../list-matches/list-matches.component';
+import { MatchService } from 'src/app/services/match/match.service';
 
 @Component({
   selector: 'app-team',
@@ -15,6 +17,7 @@ export class TeamComponent implements OnInit {
 
   public team: any = [];
   public teamID: string;
+  public match: any = [];
 
   constructor(
     private http: HttpClient,
@@ -22,9 +25,11 @@ export class TeamComponent implements OnInit {
     private leagueService: LeagueService,
     private activatedRoute: ActivatedRoute,
     private nav: NavbarService,
-    private footer: FooterService) { }
+    private footer: FooterService,
+    private matchService: MatchService) { }
 
   ngOnInit() {
+
 
     this.nav.show();
     this.footer.show();
@@ -38,6 +43,17 @@ export class TeamComponent implements OnInit {
         })
       }
     })
+
+    this.activatedRoute.params.subscribe(params => {
+      if (params && params.id) {
+        this.teamID = params.id;
+        this.matchService.getMatchesByTeam(this.teamID).subscribe(result => {
+          this.match = result;
+          console.log(result);
+        })
+      }
+    })
+
   
   
   

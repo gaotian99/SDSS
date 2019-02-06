@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { TeamService } from '../../../services/entities/team.service';
 import { Team } from '../../../models/team';
+import { NavbarService } from 'src/app/services/entities/navbar.service';
+import { LeagueService } from 'src/app/services/entities/league.service';
+import { League } from 'src/app/models/league';
 
 @Component({
   selector: 'app-addteam',
@@ -15,20 +18,32 @@ import { Team } from '../../../models/team';
 export class AddteamComponent {
 
  
-  model = new Team("", "","");
-  sports = ['Basketball', 'Volleyball', 'Soccer', 'Softball', 'Hockey', 'Flag Football']
+  teamModel = new Team("", "","");
+  public league: any = [];
 
 
-  constructor(private teamService: TeamService) {
+  
+
+
+  constructor(private teamService: TeamService,
+    private navbar: NavbarService,
+    private leagueService: LeagueService) {
 
   }
 
-  // ngOnInit(){
-  //   this.create("");
-  // }
+  ngOnInit(){
+    this.navbar.show();
+
+    this.leagueService.getLeagues().subscribe(result=> {
+      console.log(result);
+      this.league = result;
+
+    })
+
+  }
 
   create() {
-    this.teamService.create(this.model).subscribe(result => {
+    this.teamService.create(this.teamModel).subscribe(result => {
       console.log(result);
     })
   };

@@ -10,10 +10,7 @@ a{
   color: #0062cc;
   border-bottom:2px solid #0062cc;
 }
-.box{
-    padding:60px 0px;
-    
-}
+
 
 .box-part{
     background:#FFF;
@@ -37,5 +34,7 @@ p{
 }
 h1{
     margin-top: 5px;
+    font-family: Arial Black;
+    font-size: 70px;
 }
 

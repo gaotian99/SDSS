@@ -2,13 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
+  MatSortModule, MatTableModule } from "@angular/material";
 
 //services
 import { TeamService } from './services/entities/team.service';
 import { UserService } from './services/entities/user.service';
 import { LeagueService } from './services/entities/league.service';
 import { MatchService } from './services/match/match.service';
-import { MatchResultService } from './services/match/match-result.service';
 
 
 //components
@@ -33,6 +34,10 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
 import { NavbarService } from './services/entities/navbar.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { FooterService } from './services/entities/footer.service';
+import { ListMatchesComponent } from './components/list-matches/list-matches.component';
+import { FetchProfileService } from './services/entities/fetch-profile.service';
+import { AuthGuardService } from './services/auth/auth-guard.service';
+import { PlayerProfileComponent } from './components/pages/player-profile/player-profile.component';
 
 
 
@@ -57,6 +62,9 @@ import { FooterService } from './services/entities/footer.service';
     RegisterComponent,
     ProfileComponent,
     FooterComponent,
+    ListMatchesComponent,
+    PlayerProfileComponent,
+
 
   ],
   imports: [
@@ -64,8 +72,9 @@ import { FooterService } from './services/entities/footer.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatTableModule,
   ],
-  providers: [TeamService, UserService, LeagueService, MatchService, MatchResultService, NavbarService, FooterService],
+  providers: [TeamService, UserService, LeagueService, MatchService, NavbarService, FooterService, ListMatchesComponent, FetchProfileService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

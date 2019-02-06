@@ -31,6 +31,8 @@ export class UserService {
      public getLeagueManagers(): Observable<any>{
       return this.auth.request('get', "/user/leagueManager")
     }
+    
+    //Get players per team
 
   //Gets one user
   public getUser(userID: string): Observable<any> {

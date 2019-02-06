@@ -2,22 +2,11 @@
 
 <body>
   <div class="container-fluid">
-    <div class = "row">
-      <div class = "col-6">
-          <h1>{{team?.name}}</h1>
-       <button class = "btn btn-primary">Join team</button>
-      </div>
-      <div class = "col-4">
-        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-      </div>
-      <div class = "col-2">
-        2222222222222222222222222
-      </div>
-        
+    <div class="row">
+      <div class="col-lg-6">
+        <h1>{{team?.name}}</h1>
         <h5>Captain: {{team?.captain?.name}}</h5>
-    
-    
-        <!-- <table class="table table-bordered">
+        <table class="table table-bordered">
           <div>
             <tr>
               <th>Name</th>
@@ -39,20 +28,42 @@
               <th>PPG</th>
             </tr>
             <tr *ngFor="let user of team.players">
-              <td><input type="checkbox" name="name1" /></td>
-              <td><a href="/player/{{user?._id}}">{{user?.name}}</a></td>
+
+              <td><a href="/profile/{{user?._id}}">{{user?.name}}</a></td>
             </tr>
           </div>
-        </table> -->
+        </table>
+        <button class="btn btn-primary">Join team</button>
+      </div>
+      <div class="col-lg-3 recentResults">
+        <h1>Recent results</h1>
+      </div>
+      <div class="col-lg-3">
+        <h1>Upcoming games</h1>
+        <table class="table table-bordered">
+          <tr>
+            <th>Location</th>
+            <th>Date</th>
+          </tr>
+          <tr *ngFor="let match of match">
+            <td>{{match.location}}</td>
+            <td>{{match.startDate}}</td>
+          </tr>
+        </table>
 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
 
-
+      </div>
+      <div class="col-lg-4">
+      </div>
+      <div class="col-lg-2">
+      </div>
     </div>
 
-
-
-
-</div>
+  </div>
 </body>
 
 

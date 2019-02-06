@@ -139,7 +139,9 @@ export class AuthService {
 
 
 
-
+  public profile(): Observable<any> {
+    return this.request('get', '/user/' );
+  }
 
 
   public login(user: TokenPayload): Observable<any>{

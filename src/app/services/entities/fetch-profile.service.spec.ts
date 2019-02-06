@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MatchResultService } from './match-result.service';
+import { FetchProfileService } from './fetch-profile.service';
 
-describe('MatchResultService', () => {
+describe('FetchProfileService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: MatchResultService = TestBed.get(MatchResultService);
+    const service: FetchProfileService = TestBed.get(FetchProfileService);
     expect(service).toBeTruthy();
   });
 });

@@ -32,7 +32,7 @@ export class MatchService {
 
     //Gets all matches by team
   public getMatchesByTeam(teamID: string): Observable<any>{
-    return this.auth.request('get', "/matches/" + teamID)
+    return this.auth.request('get', "/match/" + teamID)
   }
   //Deletes a match
   public deleteMatch(matchID: string){

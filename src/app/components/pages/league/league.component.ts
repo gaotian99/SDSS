@@ -23,13 +23,14 @@ export class LeagueComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private teamService: TeamService,
     private navbar: NavbarService,
-    private footer: FooterService) { }
+    private footer: FooterService, ) { }
+
 
 
   ngOnInit() {
 
     this.navbar.show();
-    
+
 
     // //loads unique league information when the page loads
     this.activatedRoute.params.subscribe(params => {
@@ -52,7 +53,7 @@ export class LeagueComponent implements OnInit {
       }
     })
     this.footer.show();
- 
+
 
 
   }
