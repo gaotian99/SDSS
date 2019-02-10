@@ -34,6 +34,12 @@ export class MatchService {
   public getMatchesByTeam(teamID: string): Observable<any>{
     return this.auth.request('get', "/match/" + teamID)
   }
+
+  //Get upcoming matches by team
+
+  public getUpcomingMatchesByTeam(teamID: string): Observable<any>{
+    return this.auth.request('get', "/match/" + teamID + "/upcomingGames")
+  }
   //Deletes a match
   public deleteMatch(matchID: string){
     return this.auth.request('delete', "/match/" + matchID)

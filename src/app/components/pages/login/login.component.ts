@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth/auth.service';
 import { TokenPayload } from '../../../services/auth/auth.service';
 import { Router } from '@angular/router';
+import { NavbarService } from 'src/app/services/entities/navbar.service';
+import { FooterService } from 'src/app/services/entities/footer.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +22,11 @@ export class LoginComponent {
 
 
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private navbar: NavbarService,
+    private footer: FooterService) { }
 
 
   login(){
@@ -35,7 +41,11 @@ export class LoginComponent {
 
 
 
-  ngOnInit() {  }
+  ngOnInit() {
+
+    this.navbar.show();
+    this.footer.show();
+    }
 
 
 }

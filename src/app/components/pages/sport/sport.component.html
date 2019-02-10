@@ -8,22 +8,37 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-6">
-        <div *ngFor="let league of league">
-          <h1><a routerLink="/league/{{league._id}}">{{league?.name}}</a></h1>
-          <p>{{league?.description}} League starts on {{league?.startDate}}</p>
-          <p>Cost to register: {{league?.fee}}</p>
+        <div class="card" style="width: 71rem; height: 50rem;">
+          <div class="card-body" *ngFor="let league of league">
+            <h1><a routerLink="/league/{{league._id}}">{{league?.name}}</a></h1>
+            <p>{{league?.description}} League starts on {{league?.startDate}}</p>
+            <p>Cost to register: {{league?.fee}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3">
+        <div class="card" style="width: 35rem; height: 50rem;">
+          <div class="card-body">
+            <h1>Upcoming Schedule</h1>
+          </div>
         </div>
       </div>
       <div class="col-lg-3">
-        <h1>Recent highlights</h1>
-      </div>
-      <div class = "col-lg-3">
-       <h1>Upcoming Schedule</h1>
-      </div>
-
+          <div class="card" style="width: 35rem; height: 50rem;">
+            <div class="card-body">
+              <h1>Recent highlights</h1>
+              <br>
+              <iframe width="505" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+              </iframe>
+              <br>
+              <iframe width="505" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+              </iframe>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
-
 </body>
 
 

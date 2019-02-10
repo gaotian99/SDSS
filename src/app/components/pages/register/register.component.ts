@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { User } from 'src/app/models/user';
+import { NavbarService } from 'src/app/services/entities/navbar.service';
+import { FooterService } from 'src/app/services/entities/footer.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +11,10 @@ import { User } from 'src/app/models/user';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  constructor(
+    private auth: AuthService,
+    private navbar: NavbarService,
+    private footer: FooterService) { }
 
 
 
@@ -32,6 +37,10 @@ export class RegisterComponent implements OnInit {
 
 
   ngOnInit() {
+    this.navbar.show();
+    this.footer.show();
+
+
   }
 
 }

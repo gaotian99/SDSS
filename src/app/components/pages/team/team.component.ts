@@ -47,7 +47,7 @@ export class TeamComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       if (params && params.id) {
         this.teamID = params.id;
-        this.matchService.getMatchesByTeam(this.teamID).subscribe(result => {
+        this.matchService.getUpcomingMatchesByTeam(this.teamID).subscribe(result => {
           this.match = result;
           console.log(result);
         })

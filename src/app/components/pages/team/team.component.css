@@ -13,6 +13,16 @@ h1{
 table{
     margin-top: 20px;
 }
-.recentResults{
-    text-align: center;
+body{
+    background: lightgray;
+}
+.card{
+    margin-top: 10px;
+    border-radius: 10px;
+}
+a{
+    text-decoration: none;
+}
+button{
+    margin-left:500px;
 }
