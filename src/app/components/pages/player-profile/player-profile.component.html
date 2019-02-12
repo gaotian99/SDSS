@@ -1,3 +1,101 @@
-<p>
-  player-profile works!
-</p>
+<app-navbar></app-navbar>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card" style="width: 71rem; height: 40rem">
+          <div class="card-body">
+
+            <h1>Player: {{user?.name}} </h1>
+            <table class="table table-bordered">
+              
+                <tr>
+                  <th>GP</th>
+                  <th>FG</th>
+                  <th>FGA</th>
+                  <th>FG%</th>
+                  <th>3PM</th>
+                  <th>3PA</th>
+                  <th>3P%</th>
+                  <th>FT</th>
+                  <th>FTA</th>
+                  <th>FT%</th>
+                  <th>REB</th>
+                  <th>AST</th>
+                  <th>STL</th>
+                  <th>BLK</th>
+                  <th>PTS</th>
+                  <th>PPG</th>
+                </tr>
+                <tr>
+                  <td>{{user?.GP}}</td>
+                  <td>{{user?.FG}}</td>
+                  <td>{{user?.FGA}}</td>
+                  <td>{{user?.FG9}}</td>
+                  <td>{{user?.TPM}}</td>
+                  <TD>{{user?.TPA}}</TD>
+                  <td>{{user?.TPP}}</td>
+                  <td>{{user?.FT}}</td>
+                  <td>{{user?.FTA}}</td>
+                  <td>{{user?.FTP}}</td>
+                  <td>{{user?.REB}}</td>
+                  <td>{{user?.AST}}</td>
+                  <td>{{user?.STL}}</td>
+                  <td>{{user?.BLK}}</td>
+                  <td>{{user?.PTS}}</td>
+                  <td>{{user?.PPG}}</td>
+                </tr>
+              
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card" style="width: 35rem; height: 40rem;">
+          <div class="card-body">
+            <h1>Career highs</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card" style="width: 35rem; height: 40rem;">
+          <div class="card-body">
+            <h1>Teams played</h1>
+            <table class="table table-bordered">
+              <tr>
+                <th>Name</th>
+                <th>League</th>
+              </tr>
+              <tr *ngFor="let team of teams">
+                <th>{{team?.name}}</th>
+                  </tr>
+              <tr *ngFor="let match of match">
+                <td>{{match.location}}</td>
+                <td>{{match.startDate}}</td>
+              </tr>
+            </table>
+
+
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+
+      </div>
+      <div class="col-lg-4">
+      </div>
+      <div class="col-lg-2">
+      </div>
+    </div>
+
+  </div>
+</body>
+
+
+<app-footer></app-footer>

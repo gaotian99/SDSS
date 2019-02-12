@@ -32,10 +32,10 @@ const routes: Routes = [
   { path: 'landing', component: LandingComponent},
   { path: 'sport/:sport', component: SportComponent},
   { path: 'league/:id', component: LeagueComponent},
-  { path: 'admin', component: AdminComponent},
+  { path: 'admin', component: AdminComponent, canActivate:[AuthGuardService]},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
-  {path: 'profile',component:ProfileComponent,canActivate:[AuthGuardService]},
+  { path: 'profile',component:ProfileComponent,canActivate:[AuthGuardService]},
   { path: 'profile/:id', component: PlayerProfileComponent},
 
 ];

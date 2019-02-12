@@ -56,8 +56,8 @@ export class TeamService {
 
   //Gets teams by UserID
 
-  public getTeamsByUserId(): Observable<any>{
-    return this.auth.request('get', "/team/view/myteams")
+  public getTeamsByUserId(userID: string): Observable<any>{
+    return this.auth.request('get', "/team/view/myteams/" + userID)
   }
 
   //Deletes a team

@@ -9,6 +9,8 @@ import { Team } from 'src/app/models/team';
 import { Match } from 'src/app/models/match';
 import { MatchResult } from 'src/app/models/matchResult';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { NavbarService } from 'src/app/services/entities/navbar.service';
+import { FooterService } from 'src/app/services/entities/footer.service';
 
 
 
@@ -40,7 +42,9 @@ export class AdminComponent implements OnInit {
     private matchService: MatchService,
     private teamService: TeamService,
     private userService: UserService,
-    private auth: AuthService) { }
+    private auth: AuthService,
+    private navbar: NavbarService,
+    private footer: FooterService) { }
 
 
   createLeague() {
@@ -65,6 +69,9 @@ export class AdminComponent implements OnInit {
   };
 
   ngOnInit() {
+
+    this.navbar.show();
+    this.footer.show();
 
     this.userService.getLeagueManagers().subscribe(result => {
       console.log(result);

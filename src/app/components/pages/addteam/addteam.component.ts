@@ -6,6 +6,7 @@ import { Team } from '../../../models/team';
 import { NavbarService } from 'src/app/services/entities/navbar.service';
 import { LeagueService } from 'src/app/services/entities/league.service';
 import { League } from 'src/app/models/league';
+import { FooterService } from 'src/app/services/entities/footer.service';
 
 @Component({
   selector: 'app-addteam',
@@ -27,12 +28,14 @@ export class AddteamComponent {
 
   constructor(private teamService: TeamService,
     private navbar: NavbarService,
-    private leagueService: LeagueService) {
+    private leagueService: LeagueService,
+    private footer: FooterService ) {
 
   }
 
   ngOnInit(){
     this.navbar.show();
+    this.footer.show();
 
     this.leagueService.getLeagues().subscribe(result=> {
       console.log(result);
