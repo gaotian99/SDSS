@@ -4,7 +4,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-6">
-        <div class="card" style="width: 71rem; height: 40rem">
+        <div class="card" style="width: 71rem; height: 45rem">
           <div class="card-body">
 
             <h1>Player: {{user?.name}} </h1>
@@ -52,14 +52,30 @@
         </div>
       </div>
       <div class="col-lg-3">
-        <div class="card" style="width: 35rem; height: 40rem;">
+        <div class="card" style="width: 35rem; height: 45rem;">
           <div class="card-body">
             <h1>Career highs</h1>
+            <table class="table table-bordered">
+              <tr>
+                <th>Points</th>
+                <th>Rebounds</th>
+                <th>Assists</th>
+                <th>Steals</th>
+                <th>Blocks</th>
+              </tr>
+              <tr>
+                <td>{{user?.PTS}}</td>
+                <td>{{user?.REB}}</td>
+                <td>{{user?.AST}}</td>
+                <td>{{user?.STL}}</td>
+                <td>{{user?.BLK}}</td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
       <div class="col-lg-3">
-        <div class="card" style="width: 35rem; height: 40rem;">
+        <div class="card" style="width: 35rem; height: 45rem;">
           <div class="card-body">
             <h1>Teams played</h1>
             <table class="table table-bordered">

@@ -40,6 +40,7 @@ export class TeamComponent implements OnInit {
         this.teamService.getTeam(this.teamID).subscribe(result => {
           this.team = result.team;
           console.log(result);
+          
         })
       }
     })

@@ -23,11 +23,13 @@ export class AdminComponent implements OnInit {
 
 
   leagueModel = new League("","", "", new Date, "", "", "", "", "", "");
-  user = new User("", "", "", "", "", "","");
+  userModel = new User("", "", "", "", "", "","");
   teamModel = new Team("", "", "");
   matchModel = new Match("", new Date);
   matchResultModel = new MatchResult(true, "", "");
-
+  role = ["player", "captain", "league manager", "admin"];
+  
+  public users: any = [];
   public leagueManager: User;
   public teamCaptain: User;
   public leagues: League;
@@ -53,7 +55,7 @@ export class AdminComponent implements OnInit {
     })
   };
   createUser() {
-    this.auth.register(this.user).subscribe(result => {
+    this.auth.register(this.userModel).subscribe(result => {
       console.log(result);
     })
   }
@@ -67,6 +69,11 @@ export class AdminComponent implements OnInit {
       console.log(result);
     })
   };
+  updateUser(){
+    this.userService.update(this.userModel).subscribe(result => {
+      console.log(result);
+    })
+  }
 
   ngOnInit() {
 
@@ -76,8 +83,12 @@ export class AdminComponent implements OnInit {
     this.userService.getLeagueManagers().subscribe(result => {
       console.log(result);
       this.leagueManager = result;
-
     })
+
+    this.userService.getUsers().subscribe(result => {
+      console.log(result);
+      this.users = result;
+    });
 
     this.leagueService.getLeagues().subscribe(result => {
       console.log(result);

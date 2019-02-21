@@ -54,11 +54,11 @@ export class UserService {
   }
 
 
-
-
-
 //MODIFY
 
+public update(user: User){
+  return this.auth.request('put', "/user/update", user)
+}
 
 
 

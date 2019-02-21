@@ -39,6 +39,9 @@ export class SportComponent implements OnInit {
       }
     })
 
+
+    
+
     this.nav.show();
     this.footer.show();
 

@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TeamService } from 'src/app/services/entities/team.service';
 import { NavbarService } from 'src/app/services/entities/navbar.service';
 import { FooterService } from 'src/app/services/entities/footer.service';
+import { MatchService } from 'src/app/services/match/match.service';
 
 @Component({
   selector: 'app-league',
@@ -16,10 +17,12 @@ export class LeagueComponent implements OnInit {
   public league: any = [];
   public leagueID: string;
   public team: any = [];
+  public match: any = [];
 
   constructor(
     private http: HttpClient,
     private leagueService: LeagueService,
+    private matchService: MatchService,
     private activatedRoute: ActivatedRoute,
     private teamService: TeamService,
     private navbar: NavbarService,
@@ -30,6 +33,7 @@ export class LeagueComponent implements OnInit {
   ngOnInit() {
 
     this.navbar.show();
+    this.footer.show();
 
 
     // //loads unique league information when the page loads
@@ -43,19 +47,40 @@ export class LeagueComponent implements OnInit {
       }
     })
 
+    //loads teams in the league
+    // this.activatedRoute.params.subscribe(params => {
+    //   if (params && params.id) {
+    //     this.leagueID = params.id;
+    //     this.teamService.getTeamsByLeagueID(this.leagueID).subscribe(result => {
+    //       console.log(result);
+    //       this.team = result;
+    //       console.log(this.team[0]._id);
+    //     })
+    //   }
+    // })
+
     this.activatedRoute.params.subscribe(params => {
-      if (params && params.id) {
+      if(params && params.id) {
         this.leagueID = params.id;
-        this.teamService.getTeamsByLeagueID(this.leagueID).subscribe(result => {
+        this.matchService.getWinsLossesByLeagueID(this.leagueID).subscribe(result => {
           console.log(result);
-          this.team = result;
+          this.team=result;
         })
       }
     })
-    this.footer.show();
+    this.activatedRoute.params.subscribe(params => {
+      if(params && params.id) {
+        this.leagueID = params.id;
+        this.matchService.getUpcomingMatchesByLeagueID(this.leagueID).subscribe(result => {
+          console.log(result);
+          this.match=result;
+        })
+      }
+    })
 
+    
 
-
+    
   }
 
 }

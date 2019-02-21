@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/services/entities/user.service';
 import { FetchProfileService } from 'src/app/services/entities/fetch-profile.service';
 import { TeamService } from 'src/app/services/entities/team.service';
+import { FooterService } from 'src/app/services/entities/footer.service';
 
 @Component({
   selector: 'app-profile',
@@ -27,30 +28,26 @@ export class ProfileComponent implements OnInit {
     private auth: AuthService,
     private activatedRoute: ActivatedRoute,
     private fetchProfileService: FetchProfileService,
-    private teamService: TeamService) { }
+    private teamService: TeamService,
+    private footer: FooterService) { }
 
   ngOnInit() {
 
     this.navbar.show();
+    this.footer.show();
 
 
 
     this.fetchProfileService.fetchMyself().subscribe(result => {
       console.log(result);
       this.user = result;
-
-      this.teamService.getTeamsByUserId().subscribe(result => {
-        console.log(result);
-        this.teams = result;
-      })
-
-
     });
 
-
-
+    this.teamService.getTeamsByUserId1().subscribe(result =>{
+      console.log(result);
+      this.teams=result;
+    })
 
 
   }
-
 }
