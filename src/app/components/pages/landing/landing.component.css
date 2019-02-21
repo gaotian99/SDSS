@@ -10,6 +10,9 @@ a{
   color: #0062cc;
   
 }
+.box{
+    margin-top: 75px;
+}
 
 
 .box-part{
@@ -18,9 +21,13 @@ a{
     padding:60px 10px;
     margin:30px 0px;
     border: solid;
+    
 }
 .text{
     margin:20px 0px;
+}
+.text-center{
+    padding-top: 15px;
 }
 
 .fa{
@@ -29,11 +36,8 @@ a{
 p{
     font-size: large;
 }
-.navbar{
-    display: none;
-}
 h1{
-    margin-top: 5px;
+   
     font-family: Arial Black;
     font-size: 70px;
 }
