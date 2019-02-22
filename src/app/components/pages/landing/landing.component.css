@@ -1,5 +1,6 @@
 body{
-    background: #eee;
+    background: lightgray;
+    padding-bottom: 100px;
 }
 span{
     font-size:15px;
@@ -7,21 +8,26 @@ span{
 a{
   text-decoration:none; 
   color: #0062cc;
-  border-bottom:2px solid #0062cc;
+  
 }
 .box{
-    padding:60px 0px;
+    margin-top: 75px;
 }
+
 
 .box-part{
     background:#FFF;
-    border-radius:0;
+    border-radius:40px;
     padding:60px 10px;
     margin:30px 0px;
     border: solid;
+    
 }
 .text{
     margin:20px 0px;
+}
+.text-center{
+    padding-top: 15px;
 }
 
 .fa{
@@ -30,7 +36,9 @@ a{
 p{
     font-size: large;
 }
-.navbar{
-    display: none;
+h1{
+   
+    font-family: Arial Black;
+    font-size: 70px;
 }
-    
+

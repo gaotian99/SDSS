@@ -1,0 +1,28 @@
+h5{
+    margin-left: 5px;
+    padding-bottom: 3px;
+    display: inline;
+}
+
+h1{
+    margin-left: 5px;
+    margin-right: 15px;
+    padding-bottom: 10px;
+    display: inline;
+}
+table{
+    margin-top: 20px;
+}
+body{
+    background: lightgray;
+}
+.card{
+    margin-top: 10px;
+    border-radius: 10px;
+}
+a{
+    text-decoration: none;
+}
+button{
+    margin-left:500px;
+}

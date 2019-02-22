@@ -1,39 +1,104 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-5">
-      <h1>{{league?.description}}</h1>
-      <button class = "btn btn-primary">Create Team</button>
-      <!-- <button class = "btn btn-primary">Join Team</button> -->
-      
-      <br>
-      <br>
+<app-navbar>
+
+</app-navbar>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="card" style="width: 35rem; height: 45rem;">
+          <div class="card-body">
+            <h1>{{league?.name}}</h1>
+            <button class="btn btn-primary"><a href="/addteam">Create Team</a></button>
+            <button class="btn btn-primary"><a href="/jointeam">Join Team</a></button>
+          </div>
+        </div>
+      </div>
 
 
-      <p>The Womens A league is for female players with college level or higher experience. All games are played at LOCATION starting 1/25/2019</p>
+      <div class="col-lg-3">
+        <div class="card" style="width: 35rem; height: 45rem;">
+          <div class="card-body">
+            <h1>League news</h1>
+            <h5>{{league.headline}}</h5>
+            <p class="card-text">{{league.news}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 ">
+        <div class="card" style="width: 35rem; height: 45rem;">
+          <div class="card-body">
+            <h1> League Leaders</h1>
+            <table class="table table-bordered leagueLeaders">
+              <tr>
+                <th>Points</th>
+                <td>Michael Jordan</td>
+              </tr>
+              <tr>
+                <th>Rebounds</th>
+                <td>Dominic Leggio</td>
+              </tr>
+              <tr>
+                <th>Assists</th>
+                <td>John Stockton</td>
+              </tr>
+              <tr>
+                <th>Blocks</th>
+                <td>Hakeem Olajuwon</td>
+              </tr>
+              <tr>
+                <th>Steals</th>
+                <td>Allen Iverson</td>
+              </tr>
+
+            </table>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3">
+        <div class="card" style="width: 35rem; height: 45rem;">
+          <div class="card-body">
+            <h1 class="currentStandings">Current Standings</h1>
+
+            <div class="table">
+              <table class="table table-striped table-hover table-responsive standings">
+                <tr>
+                  <th>Games played</th>
+                  <th>Team</th>
+                  <th>Wins</th>
+                  <th>Losses</th>
+                </tr>
+                <tr *ngFor="let team of team">
+                  <th>{{team.totalGames}}</th>
+                  <th><a href="/team/{{team._id}}" class="teamName">{{team.name}}</a></th>
+                  <th>{{team.wins}}</th>
+                  <th>{{team.losses}}</th>
+                </tr>
+
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+
+
 
       </div>
 
-    <div class = "col-lg-3">
-        <table class="table table-striped table-hover table-responsive" >
-            <tr>
-               <th>Position</th>
-               <th>Team</th>
-               <th>Wins</th>
-               <th>Losses</th>
-            </tr>
-            <tr *ngFor="let team of team">
-              <th>1</th>
-              <th><a href="/team/{{team._id}}">{{team.name}}</a></th>
-              <th>5</th>
-              <th>2</th>
-            </tr>
-            
-         </table>
+
+
     </div>
-    <div class = "col-lg-4">Test</div>
-    
-  
-</div>
 
 
-</div>
+  </div>
+
+
+
+</body>
+
+
+<app-footer></app-footer>

@@ -1,48 +1,103 @@
-Team component works
+<app-navbar></app-navbar>
 
-<div class="buttons">
-  <a href="/addplayer">
-    <button class="btn btn-primary">Add Player</button></a>
-  <a href="/team"><button class="btn btn-primary delete" title="delete team" (click)="deleteTeam(_id)">Delete
-      Team</button></a>
-  <a href=""><button class="btn btn-primary" title="modify team" (click)="updateTeam(_id)">Modify Team</button></a>
-</div>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card" style="width: 71rem; height: 45rem">
+          <div class="card-body">
+
+            <h1>{{team?.name}}</h1>
+            <h5>Captain: {{team?.captain?.name}}</h5>
+            <button class="btn btn-primary">Join team</button>
+            <table class="table table-bordered">
+              
+                <tr>
+                  <th>Name</th>
+                  <th>GP</th>
+                  <th>FG</th>
+                  <th>FGA</th>
+                  <th>FG%</th>
+                  <th>3PM</th>
+                  <th>3PA</th>
+                  <th>3P%</th>
+                  <th>FT</th>
+                  <th>FTA</th>
+                  <th>FT%</th>
+                  <th>REB</th>
+                  <th>AST</th>
+                  <th>STL</th>
+                  <th>BLK</th>
+                  <th>PTS</th>
+                  <th>PPG</th>
+                </tr>
+                <tr *ngFor="let user of team.players">
+
+                  <td><a href="/profile/{{user?._id}}">{{user?.name}}</a></td>
+                  <td>{{user?.GP}}</td>
+                  <td>{{user?.FG}}</td>
+                  <td>{{user?.FGA}}</td>
+                  <td>{{user?.FG9}}</td>
+                  <td>{{user?.TPM}}</td>
+                  <TD>{{user?.TPA}}</TD>
+                  <td>{{user?.TPP}}</td>
+                  <td>{{user?.FT}}</td>
+                  <td>{{user?.FTA}}</td>
+                  <td>{{user?.FTP}}</td>
+                  <td>{{user?.REB}}</td>
+                  <td>{{user?.AST}}</td>
+                  <td>{{user?.STL}}</td>
+                  <td>{{user?.BLK}}</td>
+                  <td>{{user?.PTS}}</td>
+                  <td>{{user?.PPG}}</td>
+                </tr>
+              
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card" style="width: 35rem; height: 45rem;">
+          <div class="card-body">
+            <h1>Recent results</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card" style="width: 35rem; height: 45rem;">
+          <div class="card-body">
+            <h1>Upcoming games</h1>
+            <table class="table table-bordered">
+              <tr>
+                <th>Location</th>
+                <th>Date</th>
+              </tr>
+              <tr *ngFor="let match of match">
+                <td>{{match.location}}</td>
+                <td>{{match.startDate}}</td>
+              </tr>
+            </table>
+
+
+          </div>
+        </div>
 
 
 
-<h3>Team Name: {{team?.name}}</h3>
-<h5>Team Captain: {{team?.captain?.name}}</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
 
-<table class="table table-bordered">
-  <div>
-    <tr>
-      <th>Select</th>
-      <th>Name</th>
-      <th>GP</th>
-      <th>FG</th>
-      <th>FGA</th>
-      <th>FG%</th>
-      <th>3PM</th>
-      <th>3PA</th>
-      <th>3P%</th>
-      <th>FT</th>
-      <th>FTA</th>
-      <th>FT%</th>
-      <th>REB</th>
-      <th>AST</th>
-      <th>STL</th>
-      <th>BLK</th>
-      <th>PTS</th>
-      <th>PPG</th>
-    </tr>
-    <tr *ngFor="let user of team.players">
-        <td><input type="checkbox" name="name1" /></td>
-        <td><a href="/player/{{user?._id}}">{{user?.name}}</a></td>
-    </tr>
-
-
-
+      </div>
+      <div class="col-lg-4">
+      </div>
+      <div class="col-lg-2">
+      </div>
+    </div>
 
   </div>
+</body>
 
-</table>
+
+<app-footer></app-footer>

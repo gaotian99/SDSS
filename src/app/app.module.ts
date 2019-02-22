@@ -2,13 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
+  MatSortModule, MatTableModule } from "@angular/material";
 
 //services
 import { TeamService } from './services/entities/team.service';
 import { UserService } from './services/entities/user.service';
 import { LeagueService } from './services/entities/league.service';
 import { MatchService } from './services/match/match.service';
-import { MatchResultService } from './services/match/match-result.service';
 
 
 //components
@@ -21,13 +22,22 @@ import { AddplayerComponent } from './components/pages/addplayer/addplayer.compo
 import { TeamComponent } from './components/pages/team/team.component';
 import { DisplayplayersComponent } from './components/pages/displayplayers/displayplayers.component';
 import { DisplayMyTeamComponent } from './components/pages/display-my-team/display-my-team.component';
-import { SignInComponent } from './components/pages/sign-in/sign-in.component';
 import { LandingComponent } from './components/pages/landing/landing.component';
 import { StandingsComponent } from './components/pages/standings/standings.component';
 import { SportComponent } from './components/pages/sport/sport.component';
 import { LeagueComponent } from './components/pages/league/league.component';
 import { PlayerComponent } from './components/pages/player/player.component';
 import { AdminComponent } from './components/pages/admin/admin.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { RegisterComponent } from './components/pages/register/register.component';
+import { ProfileComponent } from './components/pages/profile/profile.component';
+import { NavbarService } from './services/entities/navbar.service';
+import { FooterComponent } from './components/footer/footer.component';
+import { FooterService } from './services/entities/footer.service';
+import { ListMatchesComponent } from './components/list-matches/list-matches.component';
+import { FetchProfileService } from './services/entities/fetch-profile.service';
+import { AuthGuardService } from './services/auth/auth-guard.service';
+import { PlayerProfileComponent } from './components/pages/player-profile/player-profile.component';
 
 
 
@@ -41,7 +51,6 @@ import { AdminComponent } from './components/pages/admin/admin.component';
     TeamComponent,
     DisplayplayersComponent,
     DisplayMyTeamComponent,
-    SignInComponent,
     LandingComponent,
     StandingsComponent,
     SportComponent,
@@ -49,6 +58,13 @@ import { AdminComponent } from './components/pages/admin/admin.component';
     TeamComponent,
     PlayerComponent,
     AdminComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
+    FooterComponent,
+    ListMatchesComponent,
+    PlayerProfileComponent,
+
 
   ],
   imports: [
@@ -56,8 +72,9 @@ import { AdminComponent } from './components/pages/admin/admin.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatTableModule,
   ],
-  providers: [TeamService, UserService, LeagueService, MatchService, MatchResultService],
+  providers: [TeamService, UserService, LeagueService, MatchService, NavbarService, FooterService, ListMatchesComponent, FetchProfileService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

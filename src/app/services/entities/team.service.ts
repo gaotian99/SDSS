@@ -31,7 +31,7 @@ export class TeamService {
 
   //Creates one team
   public create(team: Team): Observable<any> {
-    return this.auth.request('post', "/team", team)
+    return this.auth.request('post', "/team/create", team)
   }
 
   //Adds a player to a team
@@ -48,6 +48,21 @@ export class TeamService {
   public getTeams(): Observable<any>{
     return this.auth.request('get', "/team");
   }
+  // Get teams by MatchID
+
+  public getTeamsByMatchId(matchID: string){
+    return this.auth.request('get', "/team/", + matchID)
+  }
+
+  //Gets teams by UserID
+
+  public getTeamsByUserId(userID: string): Observable<any>{
+    return this.auth.request('get', "/team/view/myteams/" + userID)
+  }
+  public getTeamsByUserId1(): Observable<any>{
+    return this.auth.request('get', "/team/team/team/profile")
+  }
+
   //Deletes a team
   public deleteTeam(teamID: string){
     return this.auth.request('delete', "/team/" + teamID)

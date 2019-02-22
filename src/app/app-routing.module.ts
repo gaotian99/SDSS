@@ -13,7 +13,11 @@ import { LandingComponent } from './components/pages/landing/landing.component';
 import { LeagueComponent } from './components/pages/league/league.component';
 import { SportComponent } from './components/pages/sport/sport.component';
 import { AdminComponent } from './components/pages/admin/admin.component';
-
+import { LoginComponent } from './components/pages/login/login.component';
+import { RegisterComponent } from './components/pages/register/register.component';
+import { ProfileComponent } from './components/pages/profile/profile.component';
+import { AuthGuardService} from './services/auth/auth-guard.service';
+import { PlayerProfileComponent } from './components/pages/player-profile/player-profile.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent},
@@ -28,7 +32,11 @@ const routes: Routes = [
   { path: 'landing', component: LandingComponent},
   { path: 'sport/:sport', component: SportComponent},
   { path: 'league/:id', component: LeagueComponent},
-  { path: 'admin', component: AdminComponent},
+  { path: 'admin', component: AdminComponent, canActivate:[AuthGuardService]},
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: 'profile',component:ProfileComponent,canActivate:[AuthGuardService]},
+  { path: 'profile/:id', component: PlayerProfileComponent},
 
 ];
 

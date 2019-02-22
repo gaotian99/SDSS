@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LeagueService } from 'src/app/services/entities/league.service';
 import { MatchService } from 'src/app/services/match/match.service';
-import { MatchResultService } from 'src/app/services/match/match-result.service';
 import { TeamService } from 'src/app/services/entities/team.service';
 import { UserService } from 'src/app/services/entities/user.service';
 import { League } from 'src/app/models/league';
@@ -9,6 +8,9 @@ import { User } from 'src/app/models/user';
 import { Team } from 'src/app/models/team';
 import { Match } from 'src/app/models/match';
 import { MatchResult } from 'src/app/models/matchResult';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { NavbarService } from 'src/app/services/entities/navbar.service';
+import { FooterService } from 'src/app/services/entities/footer.service';
 
 
 
@@ -20,12 +22,14 @@ import { MatchResult } from 'src/app/models/matchResult';
 export class AdminComponent implements OnInit {
 
 
-  leagueModel = new League("", "", new Date, "", "", "");
-  userModel = new User("", "", "", "", "", "", "", "");
+  leagueModel = new League("","", "", new Date, "", "", "", "", "", "");
+  userModel = new User("", "", "", "", "", "","");
   teamModel = new Team("", "", "");
   matchModel = new Match("", new Date);
   matchResultModel = new MatchResult(true, "", "");
-
+  role = ["player", "captain", "league manager", "admin"];
+  
+  public users: any = [];
   public leagueManager: User;
   public teamCaptain: User;
   public leagues: League;
@@ -38,9 +42,11 @@ export class AdminComponent implements OnInit {
   constructor(
     private leagueService: LeagueService,
     private matchService: MatchService,
-    private matchResultService: MatchResultService,
     private teamService: TeamService,
-    private userService: UserService) { }
+    private userService: UserService,
+    private auth: AuthService,
+    private navbar: NavbarService,
+    private footer: FooterService) { }
 
 
   createLeague() {
@@ -49,7 +55,7 @@ export class AdminComponent implements OnInit {
     })
   };
   createUser() {
-    this.userService.create(this.userModel).subscribe(result => {
+    this.auth.register(this.userModel).subscribe(result => {
       console.log(result);
     })
   }
@@ -63,19 +69,26 @@ export class AdminComponent implements OnInit {
       console.log(result);
     })
   };
-  createMatchResult() {
-    this.matchResultService.create(this.matchResultModel).subscribe(result => {
+  updateUser(){
+    this.userService.update(this.userModel).subscribe(result => {
       console.log(result);
     })
   }
 
   ngOnInit() {
 
+    this.navbar.show();
+    this.footer.show();
+
     this.userService.getLeagueManagers().subscribe(result => {
       console.log(result);
       this.leagueManager = result;
-
     })
+
+    this.userService.getUsers().subscribe(result => {
+      console.log(result);
+      this.users = result;
+    });
 
     this.leagueService.getLeagues().subscribe(result => {
       console.log(result);

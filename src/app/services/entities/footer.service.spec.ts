@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MatchResultService } from './match-result.service';
+import { FooterService } from './footer.service';
 
-describe('MatchResultService', () => {
+describe('FooterService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: MatchResultService = TestBed.get(MatchResultService);
+    const service: FooterService = TestBed.get(FooterService);
     expect(service).toBeTruthy();
   });
 });

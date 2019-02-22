@@ -32,7 +32,20 @@ export class MatchService {
 
     //Gets all matches by team
   public getMatchesByTeam(teamID: string): Observable<any>{
-    return this.auth.request('get', "/matches/" + teamID)
+    return this.auth.request('get', "/match/" + teamID)
+  }
+
+  public getWinsLossesByLeagueID(leagueID: string): Observable<any>{
+    return this.auth.request('get', "/league/totalGames/" + leagueID)
+  }
+  public getUpcomingMatchesByLeagueID(leagueID: string): Observable<any>{
+    return this.auth.request('get', "/match/upcomingGames/" + leagueID )
+  }
+
+  //Get upcoming matches by team
+
+  public getUpcomingMatchesByTeam(teamID: string): Observable<any>{
+    return this.auth.request('get', "/match/" + teamID + "/upcomingGames")
   }
   //Deletes a match
   public deleteMatch(matchID: string){
@@ -42,6 +55,8 @@ export class MatchService {
   public modifyMatch(matchID: string){
     return this.auth.request('put', "/match/" + matchID)
   }
+
+ 
 
 
 }
